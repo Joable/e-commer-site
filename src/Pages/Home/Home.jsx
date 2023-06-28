@@ -1,14 +1,16 @@
+import HomeHeader from "../../Components/HomeHeader/HomeHeader";
+
 function Home() {
     return ( 
         <>
         <header>
-            <h1>
-                Header content
-            </h1>
+            <HomeHeader/>
         </header>
 
         <body>
-            <h2>Body content</h2>
+            <h2>
+                Body content
+            </h2>
         </body>
 
         <footer>
