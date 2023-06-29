@@ -3,7 +3,7 @@ import HomeHeader from "../../Components/HomeHeader/HomeHeader";
 function Home() {
     return ( 
         <>
-        <header>
+        <header style={{"width":"100%", "height":"100%"}}>
             <HomeHeader/>
         </header>
 

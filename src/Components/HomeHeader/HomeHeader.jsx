@@ -9,21 +9,27 @@ function HomeHeader() {
     return ( 
         <>
         <div className={styles.headerImages}>
-            <a href="#">
-                <img src={furniture} alt="Furniture"/>
-            </a>
+            <div className={styles.main}>
+                <a href="#">
+                    <img src={furniture} alt="Furniture"/>
+                </a>
+            </div>
 
-            <a href="#">
-                <img src={clothes} alt="Clothes" />
-            </a>
+            <div className={styles.second}>
+                <a href="#">
+                    <img src={clothes} alt="Clothes" />
+                </a>
+            </div>
 
-            <a href="#">
-                <img src={peripherals} alt="Peripherals" />
-            </a>
+            <div className={styles.third}>
+                <a href="#">
+                    <img src={peripherals} alt="Peripherals" />
+                </a>
 
-            <a href="#">
-                <img src={electronics} alt="Electronics" />
-            </a>
+                <a href="#">
+                    <img src={electronics} alt="Electronics" />
+                </a>
+            </div>
         </div>
         </>
     );

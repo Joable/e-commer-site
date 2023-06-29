@@ -1,6 +1,7 @@
 /* Global */
 
 .center{
+  display: block;
   margin:auto;
   width: 50%;
   height: 100%;
