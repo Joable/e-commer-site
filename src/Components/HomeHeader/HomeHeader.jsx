@@ -14,7 +14,7 @@ function HomeHeader() {
             </a>
 
             <a href="#">
-                <img src={electronics} alt="Electronics" />
+                <img src={clothes} alt="Clothes" />
             </a>
 
             <a href="#">
@@ -22,7 +22,7 @@ function HomeHeader() {
             </a>
 
             <a href="#">
-                <img src={clothes} alt="Clothes" />
+                <img src={electronics} alt="Electronics" />
             </a>
         </div>
         </>
