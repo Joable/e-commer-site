@@ -1,9 +1,10 @@
 import HomeHeader from "../../Components/HomeHeader/HomeHeader";
+import TrendItems from "../../Components/TrendItems/TrendItems";
 
 function Home() {
     return ( 
         <>
-        <header style={{"width":"100%", "height":"100%"}}>
+        <header>
             <HomeHeader/>
         </header>
 
@@ -11,6 +12,7 @@ function Home() {
             <h2>
                 Body content
             </h2>
+            <TrendItems/>
         </body>
 
         <footer>
