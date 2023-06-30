@@ -1,7 +1,9 @@
 a{
     display: flex;
+    position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     max-width: 100%;
     max-height: 100%;
 }
@@ -19,6 +21,27 @@ img{
     display: flex;
     width: 100%;
     height: 250px;
+}
+
+p{
+    display: flex;
+    position: absolute;
+    backdrop-filter: brightness(60%);
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+}
+
+.headerImages h3{
+    margin: 0;
+    position: absolute;
+    color: white;
+    font-size: 1.5vw;
+    bottom: 5px;
+    left: 10px;
+
 }
 
 /* Styles main */
