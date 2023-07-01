@@ -1,4 +1,12 @@
+/* style trendHeader */
 .trendHeader{
     display: flex;
     justify-content: space-between;
+}
+
+/* style trendBody */
+
+.trendBody{
+    display: flex;
+    flex-direction: row;
 }

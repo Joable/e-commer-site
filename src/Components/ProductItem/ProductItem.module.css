@@ -1,0 +1,30 @@
+/* styles item */
+
+.item{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border: 1px solid rgba(0, 0, 0, 0.233);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.item h3{
+    margin: 0;
+}
+
+.item h4{
+    margin: 0;
+}
+
+.item img{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.233);
+    height: 50%;
+}
+
+/* Styles itemBody */
+
+.itemBody{
+    margin: 0;
+    padding: 0px 10px;
+}
