@@ -1,25 +1,17 @@
+import Footer from "../../Components/Footer/Footer";
 import HomeHeader from "../../Components/HomeHeader/HomeHeader";
 import TrendItems from "../../Components/TrendItems/TrendItems";
 
 function Home() {
     return ( 
         <>
-        <header>
+        <div>
             <HomeHeader/>
-        </header>
+        </div>
 
-        <body>
-            <h2>
-                Body content
-            </h2>
+        <div>
             <TrendItems/>
-        </body>
-
-        <footer>
-            <h2>
-                Footer content
-            </h2>
-        </footer>
+        </div>
         </>
     );
 }
