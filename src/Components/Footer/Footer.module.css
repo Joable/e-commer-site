@@ -1,0 +1,30 @@
+/* footer */
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: 100px;
+
+}
+
+/* footerBody */
+.footerBody{
+    display: flex;
+    margin:auto;
+    width: 20%;
+    justify-content: space-between;
+}
+
+.footerBody a{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+    max-width: fit-content;
+}
+
+/* footerLogo */
+.footerLogo{
+    color: white;
+    text-align: center;
+    height: 70%;
+}
