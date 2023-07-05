@@ -19,7 +19,12 @@
 
 .item img{
     border-bottom: 1px solid rgba(0, 0, 0, 0.233);
-    height: 50%;
+    height: 70%;
+}
+
+.item:hover{
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
 /* Styles itemBody */
