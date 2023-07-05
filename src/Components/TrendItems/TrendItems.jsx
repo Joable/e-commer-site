@@ -1,16 +1,9 @@
-import { useEffect } from 'react';
 import ProductItem from '../ProductItem/ProductIem';
 import styles from './TrendItems.module.css'
 
 function TrendItems() {
-    const htmlElement = document.getElementById('trendItems');
     const arrow1 = "<--", arrow2 = "-->";
     const iterator = [0,0,0,0,0,0,0,0,0,0];
-
-    useEffect(() => {
-        const xAxisValue = getComputedStyle(document.getElementById('trendItems')).getPropertyValue('--x-axis')
-        console.log(xAxisValue)
-    },[]);
 
     const moveXAxis = (value) => document.getElementById('trendItems').style.setProperty('--x-axis', value);
     
