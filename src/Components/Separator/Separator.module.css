@@ -1,13 +1,32 @@
 /* separatorBody */
 .separatorBody{
+    margin: 25px 0;
     display: flex;
+    height: 250px;
 }
 
 .separatorBody img{
     width: 50%;
 }
 
-/* text */
-.text{
+/* textContainer */
+.textContainer{
     width: 50%;
+    position: relative;
+}
+
+/* textBody */
+.textBody{
+    top: 15%;
+    position: absolute;
+}
+
+.textBody h2{
+    margin: 0;
+}
+
+.textBody p{
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

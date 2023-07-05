@@ -22,7 +22,7 @@
     max-height: 100%;
 }
 
-p{
+.headerImages p{
     display: flex;
     position: absolute;
     backdrop-filter: brightness(60%);
