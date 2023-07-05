@@ -1,0 +1,8 @@
+/* separatorBody */
+.separatorBody{
+    display: flex;
+}
+
+.separatorBody img{
+    width: 50%;
+}

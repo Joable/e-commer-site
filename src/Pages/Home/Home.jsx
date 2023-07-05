@@ -1,5 +1,5 @@
-import Footer from "../../Components/Footer/Footer";
 import HomeHeader from "../../Components/HomeHeader/HomeHeader";
+import Separator from "../../Components/Separator/Separator";
 import TrendItems from "../../Components/TrendItems/TrendItems";
 
 function Home() {
@@ -10,7 +10,11 @@ function Home() {
         </div>
 
         <div>
+            <Separator/>
+
             <TrendItems/>
+            
+            <Separator/>
         </div>
         </>
     );
