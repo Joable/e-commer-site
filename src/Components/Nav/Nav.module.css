@@ -1,0 +1,27 @@
+/* navContainer */
+.navContainer{
+    margin: auto;
+    width: 60%;
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.navContainer h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* navButtons */
+.navButtons{
+    margin-top: 15px;
+}
+
+.navButtons a{
+    margin-right: 10px;
+    color: black;
+    text-decoration: none;
+}
