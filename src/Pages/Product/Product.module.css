@@ -1,0 +1,22 @@
+/* productBody */
+.productBody{
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+}
+
+.productBody img{
+    width: 55%;
+}
+
+/* productDetails */
+.productDetails{
+    width: 40%;
+
+}
+
+/* productPrice */
+.productPrice{
+    display: flex;
+    justify-content: space-between;
+}

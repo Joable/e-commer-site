@@ -1,5 +1,8 @@
 import styles from './Nav.module.css';
 
+import { Link } from 'react-router-dom'; 
+
+
 function Nav() {
 
     return ( 
@@ -8,7 +11,7 @@ function Nav() {
             <h1>NAV</h1>
             <div className={styles.navButtons}>
                 <a href="#">Categories</a>
-                <a href="#">Product Page</a>
+                <Link to="/product">Product Page</Link>
                 <button>Carrito</button>
             </div>
         </nav>
