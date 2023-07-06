@@ -14,13 +14,19 @@ function Product() {
                     Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
                     Sed eleifend leo pellentesque, pharetra ex eget, tempor risus.
                 </p>
-                
+
                 <div className={styles.productPrice}>
                     <h3>Quantity</h3>
 
                     <p>quiantity counter</p>
 
                     <h3>Price</h3>
+                </div>
+
+                <div className={styles.productButtons}>
+                    <button className={styles.whiteButton}>ADD TO CART</button>
+
+                    <button className={styles.redButton}>BUY NOW</button>
                 </div>
             </div>
         </div>

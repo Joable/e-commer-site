@@ -12,7 +12,6 @@
 /* productDetails */
 .productDetails{
     width: 40%;
-
 }
 
 /* productPrice */
@@ -20,3 +19,37 @@
     display: flex;
     justify-content: space-between;
 }
+
+/* productButtons */
+.productButtons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.productButtons button{
+    width: 45%;
+    height: 50px;
+    cursor:pointer;
+}
+
+/* whiteButton */
+.whiteButton{
+    border: 2px solid black;
+    background-color: rgb(255, 255, 255);
+}
+
+.whiteButton:hover{
+    background-color: rgb(225, 225, 225);
+}
+
+/* redButton */
+.redButton{
+    color: white;
+    border: 0;
+    background-color: rgb(255, 0, 0);
+}
+
+.redButton:hover{
+    background-color: rgb(225, 0, 0);
+}
+
