@@ -1,13 +1,27 @@
 import styles from './Product.module.css';
-import productImg from '../../img/goatsuba.jpg'
+import productImg from '../../img/goatsuba.jpg';
+import productImg2 from '../../img/goatsuba2.png';
+import productImg3 from '../../img/goatsuba3.jpg'
+
+import TrendItems from '../../Components/TrendItems/TrendItems';
 
 function Product() {
     return (
         <>
-        <h2>Product Page</h2>
+        <h2 className={styles.productTitle}>Product Page</h2>
 
         <div className={styles.productBody}>
-            <img src={productImg} alt="Product"/>
+            <div className={styles.productImages}>
+                <img src={productImg} alt="Product"/>
+
+                <div className={styles.imageSelector}>
+                    <img src={productImg} alt="Product"/>
+
+                    <img src={productImg2} alt="Product" />
+
+                    <img src={productImg3} alt="Product" />
+                </div>
+            </div>
 
             <div className={styles.productDetails}>
                 <p>
@@ -29,6 +43,10 @@ function Product() {
                     <button className={styles.redButton}>BUY NOW</button>
                 </div>
             </div>
+        </div>
+
+        <div className={styles.trend}>
+            <TrendItems/>
         </div>
         </> 
     );
