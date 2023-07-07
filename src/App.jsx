@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer';
 import Nav from './Components/Nav/Nav';
 import Home from './Pages/Home/Home';
 import Product from './Pages/Product/Product';
+import Categories from './Pages/Categories/Categories';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           <Route path='/' element={<Home/>}/>
 
           <Route path='/product' element={<Product/>}/>
+
+          <Route path='/categories' element={<Categories/>}/>
       </Routes>
     </div>
 

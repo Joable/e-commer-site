@@ -10,8 +10,10 @@ function Nav() {
         <nav className={styles.navContainer}>
             <h1>NAV</h1>
             <div className={styles.navButtons}>
-                <a href="#">Categories</a>
-                <Link to="/product">Product Page</Link>
+                <Link to='/categories'>Categories</Link>
+
+                <Link to='/product'>Product Page</Link>
+
                 <button>Carrito</button>
             </div>
         </nav>
