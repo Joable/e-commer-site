@@ -1,4 +1,4 @@
-import ProductItem from '../ProductItem/ProductIem';
+import ProductItem from '../ProductItem/ProductItem';
 import styles from './TrendItems.module.css'
 
 function TrendItems() {
