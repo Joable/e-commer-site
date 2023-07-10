@@ -7,7 +7,7 @@ function Categories() {
         let components = [];
 
         for(let i = 0 ; i < num ; i++){
-            components.push(<ProductItem/>);
+            components.push(<ProductItem />);
         };
 
         return components;
@@ -38,7 +38,7 @@ function Categories() {
             </div>
 
             <div className={styles.categoriesProducts}>
-                {iterator(10)}
+                {iterator(20)}
             </div>
         </div>
         </> 
