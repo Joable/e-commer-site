@@ -38,3 +38,12 @@
 .textBody p{
     margin: 10px 0;
 }
+
+.textBody button{
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border-radius: 0;
+    border: 0;
+}
