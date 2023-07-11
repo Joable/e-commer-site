@@ -24,7 +24,6 @@ function TrendItems() {
                 {iterator.map(()=><ProductItem/>)}
             </div>
         </div>
-        
         </>
     );
 }

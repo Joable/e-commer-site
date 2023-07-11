@@ -1,14 +1,24 @@
 /* separatorBody */
 .separatorBody{
-    margin: 25px 0;
     display: flex;
-    height: 250px;
+    height: 100%;
+    margin: 25px 0;
 }
 
 .separatorBody img{
     width: 50%;
 }
+/* bodyReverse */
+.bodyReverse{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100%;
+    margin: 25px 0;
+}
 
+.bodyReverse img{
+    width: 50%;
+}
 /* textContainer */
 .textContainer{
     width: 50%;
@@ -17,7 +27,7 @@
 
 /* textBody */
 .textBody{
-    top: 15%;
+    padding: 8% 15%;
     position: absolute;
 }
 
@@ -26,7 +36,5 @@
 }
 
 .textBody p{
-    margin: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin: 10px 0;
 }

@@ -5,6 +5,17 @@ import Separator from "../../Components/Separator/Separator";
 import TrendItems from "../../Components/TrendItems/TrendItems";
 
 function Home() {
+    const kitchenSeparator = {
+        title: "Kitchen utensils",
+        text: "Get the best utensils for your kitchen",
+        reverse: false
+    };
+    const lampsSeparator = {
+        title: "Huge variety of lamps",
+        text: "Search through our catalog of lamp and find the one that fits with you",
+        reverse: true
+    }
+
     return ( 
         <>
         <div className={styles.homeHeader}>
@@ -12,7 +23,7 @@ function Home() {
         </div>
 
         <div className={styles.separator}>
-            <Separator/>
+            <Separator parameters={kitchenSeparator}/>
         </div>
         
         <div className={styles.trendItems}>
@@ -20,7 +31,7 @@ function Home() {
         </div>
         
         <div className={styles.separator}>
-            <Separator/>
+            <Separator parameters={lampsSeparator}/>
         </div>
         </>
     );

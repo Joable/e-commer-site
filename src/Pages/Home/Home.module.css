@@ -5,6 +5,7 @@
 
 /* separator */
 .separator{
-    margin-top: 50px;
-    margin-bottom: 50px;
+    height: 30vh;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }

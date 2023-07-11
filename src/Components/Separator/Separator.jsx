@@ -1,26 +1,23 @@
 import styles from './Separator.module.css';
 import image from '../../img/osaka2.PNG';
+import { useEffect } from 'react';
 
-function Separator() {
+function Separator({parameters}) {
+
     return ( 
         <>
-        <div className={styles.separatorBody}>
-
+        <div className={(parameters.reverse) ?  styles.bodyReverse : styles.separatorBody}>
             <div className={styles.textContainer}>
                 <div className={styles.textBody}>
-                    <h2>Title</h2>
+                    <h2>{parameters.title}</h2>
 
-                    <p>
-                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                        Sed eleifend leo pellentesque, pharetra ex eget, tempor risus.
-                    </p>
+                    <p>{parameters.text}</p>
 
                     <button className={styles.separatorButton}>SHOP NOW</button>
                 </div>
             </div>
 
             <img src={image} alt="Separator"/>
-
         </div>
         </>
     );
