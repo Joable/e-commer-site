@@ -4,14 +4,15 @@
     justify-content: space-between;
 }
 
-.trendHeader button{
+/* headerButtons */
+.headerButtons button{
     margin-right: 5px;
     color: black;
     background-color: white;
     border: 1px solid black;
 }
 
-.trendHeader button:hover{
+.headerButtons button:hover{
     cursor: pointer;
     background-color: rgb(225, 225, 225);
 }

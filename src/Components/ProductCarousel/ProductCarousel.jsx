@@ -13,7 +13,7 @@ function ProductCarousel() {
         <div className={styles.trendHeader}>
             <h2>Trending Products</h2>
 
-            <div>
+            <div className={styles.headerButtons}>
                 <button onClick={() => moveXAxis("0%")}>{arrow1}</button>
                 <button onClick={() => moveXAxis("-50%")}>{arrow2}</button>
             </div>
