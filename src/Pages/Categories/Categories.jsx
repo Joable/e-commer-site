@@ -9,6 +9,7 @@ import { getAllProducts, getFilteredProducts } from '../../Utils/getProducts';
 
 function Categories() {
     const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(()=>{
         const responseProducts = async () =>{
@@ -17,6 +18,7 @@ function Categories() {
 
                 setProducts(response.docs);
 
+                setIsLoading(false)
             }catch(e){
                 console.log(e);
             };
@@ -25,8 +27,24 @@ function Categories() {
         responseProducts();
     }, []);
 
+    const displayProducts = () =>{
+        if(isLoading){
+            return(
+                <>
+                    Loading...
+                </>
+            );
+        }else{
+            return(
+            products.map((elements) => <ProductItem productData={elements.data()}/>)
+            )
+        }
+    }
+
     const changeCategory = async (category) => {
         try{
+            setIsLoading(true);
+
             if(category){
                 const response = await getFilteredProducts(category);
 
@@ -36,6 +54,8 @@ function Categories() {
 
                 setProducts(response.docs);
             };
+
+            setIsLoading(false);
         }catch(e){
             console.log(e);
         };
@@ -48,7 +68,6 @@ function Categories() {
         </div>
 
         <div className={styles.categoriesBody}>
-
             <div className={styles.categoriesButtons}>
                 <button onClick={()=> changeCategory('')}>All</button>
                 
@@ -66,11 +85,12 @@ function Categories() {
             </div>
 
             <div className={styles.categoriesProducts}>
-                {products.map((elements) => <ProductItem productData={elements.data()}/>)}
+                {displayProducts()}
             </div>
         </div>
         </> 
     );
 }
+
 
 export default Categories;
