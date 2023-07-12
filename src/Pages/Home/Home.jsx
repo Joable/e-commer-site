@@ -2,7 +2,7 @@ import styles from './Home.module.css';
 
 import HomeHeader from "../../Components/HomeHeader/HomeHeader";
 import Separator from "../../Components/Separator/Separator";
-import TrendItems from "../../Components/TrendItems/TrendItems";
+import ProductCarousel from "../../Components/ProductCarousel/ProductCarousel";
 
 function Home() {
     const kitchenSeparator = {
@@ -27,7 +27,7 @@ function Home() {
         </div>
         
         <div className={styles.trendItems}>
-            <TrendItems/>
+            <ProductCarousel/>
         </div>
         
         <div className={styles.separator}>

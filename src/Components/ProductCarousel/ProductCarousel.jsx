@@ -1,7 +1,7 @@
 import ProductItem from '../ProductItem/ProductItem';
-import styles from './TrendItems.module.css'
+import styles from './ProductCarousel.module.css'
 
-function TrendItems() {
+function ProductCarousel() {
     const arrow1 = "<--", arrow2 = "-->";
 
     const iterator = (num) => {
@@ -37,4 +37,4 @@ function TrendItems() {
     );
 }
 
-export default TrendItems;
+export default ProductCarousel;

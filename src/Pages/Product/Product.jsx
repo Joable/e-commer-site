@@ -3,7 +3,7 @@ import productImg from '../../img/goatsuba.jpg';
 import productImg2 from '../../img/goatsuba2.png';
 import productImg3 from '../../img/goatsuba3.jpg'
 
-import TrendItems from '../../Components/TrendItems/TrendItems';
+import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
 
 function Product() {
     return (
@@ -46,7 +46,7 @@ function Product() {
         </div>
 
         <div className={styles.trend}>
-            <TrendItems/>
+            <ProductCarousel/>
         </div>
         </> 
     );
