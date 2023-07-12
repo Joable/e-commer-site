@@ -27,14 +27,18 @@ function Categories() {
 
     const changeCategory = async (category) => {
         try{
-            const response = await getFilteredProducts(category);
+            if(category){
+                const response = await getFilteredProducts(category);
 
-            setProducts(response.docs);
+                setProducts(response.docs);
+            }else{
+                const response = await getAllProducts();
 
-            console.log(products)
+                setProducts(response.docs);
+            };
         }catch(e){
             console.log(e);
-        }
+        };
     };
 
     return (
@@ -46,19 +50,19 @@ function Categories() {
         <div className={styles.categoriesBody}>
 
             <div className={styles.categoriesButtons}>
-                <button>All</button>
+                <button onClick={()=> changeCategory('')}>All</button>
                 
-                <button onClick={()=> changeCategory('furnitures')}>Furnitures</button>
+                <button onClick={()=> changeCategory('furniture')}>Furnitures</button>
                 
-                <button>Kitchen</button>
+                <button onClick={()=> changeCategory('kitchen')}>Kitchen</button>
                 
-                <button>Lamps</button>
+                <button onClick={()=> changeCategory('lamps')}>Lamps</button>
                 
-                <button>Clothes</button>
+                <button onClick={()=> changeCategory('clothes')}>Clothes</button>
                 
-                <button>Electronics</button>
+                <button onClick={()=> changeCategory('electronics')}>Electronics</button>
                 
-                <button>Peripherals</button>
+                <button onClick={()=> changeCategory('peripherals')}>Peripherals</button>
             </div>
 
             <div className={styles.categoriesProducts}>
