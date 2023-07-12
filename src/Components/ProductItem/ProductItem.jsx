@@ -10,7 +10,7 @@ function ProductItem({productData}) {
             <div className={styles.itemBody}>
                 <h4>{productData.name}</h4>
 
-                <h3>{productData.price}</h3>
+                <h3>{productData.price}$</h3>
             </div>
         </div>
 

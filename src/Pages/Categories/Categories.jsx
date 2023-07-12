@@ -1,10 +1,42 @@
 import styles from './Categories.module.css';
 
+import { useEffect, useState } from 'react';
+
 import ProductItem from '../../Components/ProductItem/ProductItem';
 
-import { iterator } from '../../Utils/iterator';
+import { getAllProducts, getFilteredProducts } from '../../Utils/getProducts';
+
 
 function Categories() {
+    const [products, setProducts] = useState([]);
+
+    useEffect(()=>{
+        const responseProducts = async () =>{
+            try{
+                const response = await getAllProducts();
+
+                setProducts(response.docs);
+
+            }catch(e){
+                console.log(e);
+            };
+        };
+
+        responseProducts();
+    }, []);
+
+    const changeCategory = async (category) => {
+        try{
+            const response = await getFilteredProducts(category);
+
+            setProducts(response.docs);
+
+            console.log(products)
+        }catch(e){
+            console.log(e);
+        }
+    };
+
     return (
         <>
         <div className={styles.categoriesTitle}>
@@ -16,7 +48,7 @@ function Categories() {
             <div className={styles.categoriesButtons}>
                 <button>All</button>
                 
-                <button>Furnitures</button>
+                <button onClick={()=> changeCategory('furnitures')}>Furnitures</button>
                 
                 <button>Kitchen</button>
                 
@@ -30,7 +62,7 @@ function Categories() {
             </div>
 
             <div className={styles.categoriesProducts}>
-                {iterator(20).map((element) => <ProductItem productData={element}/>)}
+                {products.map((elements) => <ProductItem productData={elements.data()}/>)}
             </div>
         </div>
         </> 
