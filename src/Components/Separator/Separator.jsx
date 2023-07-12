@@ -13,7 +13,7 @@ function Separator({parameters}) {
 
                     <p>{parameters.text}</p>
 
-                    <button className={styles.separatorButton}>SHOP NOW</button>
+                    <button className={styles.separatorButton}><b>SHOP NOW</b></button>
                 </div>
             </div>
 

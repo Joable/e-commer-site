@@ -3,7 +3,16 @@ import styles from './TrendItems.module.css'
 
 function TrendItems() {
     const arrow1 = "<--", arrow2 = "-->";
-    const iterator = [0,0,0,0,0,0,0,0,0,0];
+
+    const iterator = (num) => {
+        let components = [];
+
+        for(let i = 0 ; i < num ; i++){
+            components.push(<ProductItem />);
+        };
+
+        return components;
+    };
 
     const moveXAxis = (value) => document.getElementById('trendItems').style.setProperty('--x-axis', value);
     
@@ -21,7 +30,7 @@ function TrendItems() {
 
         <div className={styles.trendBody}>
             <div id='trendItems' className={styles.trendItems}>
-                {iterator.map(()=><ProductItem/>)}
+                {iterator(10)}
             </div>
         </div>
         </>

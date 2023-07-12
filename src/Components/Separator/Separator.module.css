@@ -47,3 +47,7 @@
     border-radius: 0;
     border: 0;
 }
+
+.textBody button:hover{
+    cursor: pointer;
+}
