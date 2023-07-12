@@ -4,32 +4,35 @@
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.233);
-    border-radius: 10px;
     overflow: hidden;
+    height: 300px;
 }
 
-.item h3{
-    margin: 0;
-}
-
-.item h4{
-    margin: 0;
-}
 
 .item img{
     border-bottom: 1px solid rgba(0, 0, 0, 0.233);
-    height: 70%;
+    height: 210px;
 }
 
 .item:hover{
     border: 1px solid black;
-    border-radius: 10px;
     cursor: pointer;
 }
 
 /* Styles itemBody */
 
 .itemBody{
+    display: flex;
+    flex-direction: column;
+    height: 90px;
     margin: 0;
     padding: 0px 10px;
+}
+
+.itemBody h3{
+    margin: auto 0 10px 0;
+}
+
+.itemBody h4{
+    margin: 10px 0 0 0;
 }
