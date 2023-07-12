@@ -19,11 +19,11 @@
 /* trendItems */
 .trendItems{
     --x-axis : -50%;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 5px;
     width: 200%;
     transform: translateX(var(--x-axis));
-    margin-bottom: 5px;
 }
 
 /* trendBody */

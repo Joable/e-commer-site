@@ -1,18 +1,10 @@
 import ProductItem from '../ProductItem/ProductItem';
 import styles from './ProductCarousel.module.css'
 
+import { iterator } from '../../Utils/iterator';
+
 function ProductCarousel() {
     const arrow1 = "<--", arrow2 = "-->";
-
-    const iterator = (num) => {
-        let components = [];
-
-        for(let i = 0 ; i < num ; i++){
-            components.push(<ProductItem />);
-        };
-
-        return components;
-    };
 
     const moveXAxis = (value) => document.getElementById('trendItems').style.setProperty('--x-axis', value);
     
@@ -30,7 +22,7 @@ function ProductCarousel() {
 
         <div className={styles.trendBody}>
             <div id='trendItems' className={styles.trendItems}>
-                {iterator(10)}
+                {iterator(10).map((element) => <ProductItem productData={element}/>)}
             </div>
         </div>
         </>
