@@ -13,16 +13,12 @@ import { getProductById } from '../../Utils/getProducts';
 function Product() {
     const [product, setProduct] = useState({});
     const [image, setImage] = useState(productImg);
-    const defaultId = "nQmNSwLXnb1JdqWn4kG5";
-    const {urlId} = useParams();
-    let id = "";
+    const {id} = useParams();
     
     useEffect(() => {
         const responseProduct = async () =>{
             try{
-                (!urlId) ? id = defaultId : id = urlId;
-
-                const response = await getProductById(id);
+                 const response = await getProductById(id);
 
                 setProduct(response.data());
             }catch(e){
@@ -58,8 +54,7 @@ function Product() {
 
             <div className={styles.productDetails}>
                 <p>
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                    Sed eleifend leo pellentesque, pharetra ex eget, tempor risus.
+                    {product.description}
                 </p>
 
                 <div className={styles.productPrice}>
