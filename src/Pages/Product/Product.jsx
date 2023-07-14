@@ -12,9 +12,10 @@ import { getProductById } from '../../Utils/getProducts';
 
 function Product() {
     const [product, setProduct] = useState({});
+    const [image, setImage] = useState(productImg);
     const defaultId = "nQmNSwLXnb1JdqWn4kG5";
-    const {urlId} = useParams()
-    let id = ""
+    const {urlId} = useParams();
+    let id = "";
     
     useEffect(() => {
         const responseProduct = async () =>{
@@ -32,20 +33,26 @@ function Product() {
         responseProduct();
     }, []);
 
+    const diplayImage = () =>{
+        return(
+            <img src={image} alt="Product"/>
+        )
+    };
+
     return (
         <>
         <h2 className={styles.productTitle}>{product.name}</h2>
 
         <div className={styles.productBody}>
             <div className={styles.productImages}>
-                <img src={productImg} alt="Product"/>
+                {diplayImage()}
 
                 <div className={styles.imageSelector}>
-                    <img src={productImg} alt="Product"/>
+                    <img onClick={() => setImage(productImg)} src={productImg} alt="Product"/>
 
-                    <img src={productImg2} alt="Product" />
+                    <img onClick={() => setImage(productImg2)} src={productImg2} alt="Product" />
 
-                    <img src={productImg3} alt="Product" />
+                    <img onClick={() => setImage(productImg3)} src={productImg3} alt="Product" />
                 </div>
             </div>
 
