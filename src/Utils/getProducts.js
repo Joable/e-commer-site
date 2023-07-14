@@ -7,3 +7,7 @@ export function getAllProducts(){
 export function getFilteredProducts(category){
     return firebase.db.collection('products').where('category', '==', category).get();
 }
+
+export function getProductById(id){
+    return firebase.db.collection('products').doc(id).get();
+}

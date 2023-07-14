@@ -3,12 +3,38 @@ import productImg from '../../img/goatsuba.jpg';
 import productImg2 from '../../img/goatsuba2.png';
 import productImg3 from '../../img/goatsuba3.jpg'
 
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
 
+import { getProductById } from '../../Utils/getProducts';
+
 function Product() {
+    const [product, setProduct] = useState({});
+    const defaultId = "nQmNSwLXnb1JdqWn4kG5";
+    const {urlId} = useParams()
+    let id = ""
+    
+    useEffect(() => {
+        const responseProduct = async () =>{
+            try{
+                (!urlId) ? id = defaultId : id = urlId;
+
+                const response = await getProductById(id);
+
+                setProduct(response.data());
+            }catch(e){
+                console.log(e)
+            }
+        };
+
+        responseProduct();
+    }, []);
+
     return (
         <>
-        <h2 className={styles.productTitle}>Product Page</h2>
+        <h2 className={styles.productTitle}>{product.name}</h2>
 
         <div className={styles.productBody}>
             <div className={styles.productImages}>
@@ -34,7 +60,7 @@ function Product() {
 
                     <p>quiantity counter</p>
 
-                    <h3>Price</h3>
+                    <h3>{product.price}$</h3>
                 </div>
 
                 <div className={styles.productButtons}>
