@@ -1,10 +1,27 @@
 import ProductItem from '../ProductItem/ProductItem';
 import styles from './ProductCarousel.module.css'
 
-import { iterator } from '../../Utils/iterator';
+import { useEffect, useState } from 'react';
+
+import { getTrendProducts } from '../../Services/getProducts'
 
 function ProductCarousel() {
+    const [trendProducts, setTrendProducts] = useState([])
     const arrow1 = "<--", arrow2 = "-->";
+
+    useEffect(() => {
+        const responseProduct = async () =>{
+            try{
+                 const response = await getTrendProducts();
+
+                setTrendProducts(response.docs);
+            }catch(e){
+                console.log(e)
+            }
+        };
+
+        responseProduct();
+    }, []);
 
     const moveXAxis = (value) => document.getElementById('trendItems').style.setProperty('--x-axis', value);
     
@@ -22,7 +39,7 @@ function ProductCarousel() {
 
         <div className={styles.trendBody}>
             <div id='trendItems' className={styles.trendItems}>
-                {iterator(10).map((element) => <ProductItem productData={element}/>)}
+                {trendProducts.map((element) => <ProductItem productData={element.data()}/>)}
             </div>
         </div>
         </>

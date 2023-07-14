@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
 
-import { getProductById } from '../../Utils/getProducts';
+import { getProductById } from '../../Services/getProducts';
 
 function Product() {
     const [product, setProduct] = useState({});

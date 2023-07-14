@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import ProductItem from '../../Components/ProductItem/ProductItem';
 
-import { getAllProducts, getFilteredProducts } from '../../Utils/getProducts';
+import { getAllProducts, getFilteredProducts } from '../../Services/getProducts';
 
 
 function Categories() {
