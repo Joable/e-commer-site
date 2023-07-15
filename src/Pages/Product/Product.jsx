@@ -11,7 +11,7 @@ import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
 import { getProductById } from '../../Services/getProducts';
 
 function Product() {
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState({details:[]});
     const [image, setImage] = useState(productImg);
     const {id} = useParams();
     
@@ -52,7 +52,7 @@ function Product() {
                 </div>
             </div>
 
-            <div className={styles.productDetails}>
+            <div className={styles.productDescription}>
                 <p>
                     {product.description}
                 </p>
@@ -71,6 +71,10 @@ function Product() {
                     <button className={styles.redButton}>BUY NOW</button>
                 </div>
             </div>
+        </div>
+
+        <div className={styles.detailsSection}>
+            {product.details.map((detail) => <div className={styles.productDetails}><h3>{detail.name}</h3> <h4>{detail.description}</h4></div>)}
         </div>
 
         <div className={styles.trend}>

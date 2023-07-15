@@ -38,7 +38,7 @@
 }
 
 /* productDetails */
-.productDetails{
+.productDescription{
     width: 40%;
     margin-top: 10%;
 }
@@ -80,6 +80,19 @@
 
 .redButton:hover{
     background-color: rgb(225, 0, 0);
+}
+
+/* productDetails */
+.detailsSection{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+/* productDetails */
+.productDetails{
+    background-color: aliceblue;
+    padding-left: 20px;
 }
 
 /* trend */
