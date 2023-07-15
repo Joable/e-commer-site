@@ -39,7 +39,7 @@ function ProductCarousel() {
 
         <div className={styles.trendBody}>
             <div id='trendItems' className={styles.trendItems}>
-                {trendProducts.map((element) => <ProductItem productData={element.data()}/>)}
+                {trendProducts.map((element) => <ProductItem id={element.id} productData={element.data()}/>)}
             </div>
         </div>
         </>

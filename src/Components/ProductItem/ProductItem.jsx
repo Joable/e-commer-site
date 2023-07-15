@@ -3,10 +3,10 @@ import placholder from '../../img/osaka2.PNG';
 
 import { Link } from 'react-router-dom';
 
-function ProductItem({productData}) {
+function ProductItem({id, productData}) {
+
     return (  
-        //<Link to={`/product/${productData.id}`}>
-            <div onClick={() => console.log(productData.id)} className={styles.item}>
+        <Link className={styles.item} to={`/product/${id}`} target="_blank">
                     <img src={placholder} alt="Product"/>
 
                     <div className={styles.itemBody}>
@@ -14,8 +14,7 @@ function ProductItem({productData}) {
 
                         <h3>{productData.price}$</h3>
                     </div>
-            </div>
-       //</Link>
+       </Link>
 
     );
 }

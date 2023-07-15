@@ -36,7 +36,7 @@ function Categories() {
             );
         }else{
             return(
-            products.map((elements) => <ProductItem productData={elements.data()}/>)
+            products.map((element) => <ProductItem id={element.id} productData={element.data()}/>)
             )
         }
     }
