@@ -29,19 +29,13 @@ function Product() {
         responseProduct();
     }, []);
 
-    const diplayImage = () =>{
-        return(
-            <img src={image} alt="Product"/>
-        )
-    };
-
     return (
         <>
         <h2 className={styles.productTitle}>{product.name}</h2>
 
         <div className={styles.productBody}>
             <div className={styles.productImages}>
-                {diplayImage()}
+                <img src={image} alt="Product"/>
 
                 <div className={styles.imageSelector}>
                     <img onClick={() => setImage(productImg)} src={productImg} alt="Product"/>
