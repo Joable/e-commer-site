@@ -16,7 +16,7 @@ function Separator({parameters}) {
                 </div>
             </div>
 
-            <img src={'../../img/furniture.jpg'} alt="Separator"/>
+            <img src={parameters.image} alt="Separator"/>
         </div>
         </>
     );
