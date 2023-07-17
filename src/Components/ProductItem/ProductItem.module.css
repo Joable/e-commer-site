@@ -10,15 +10,22 @@
     overflow: hidden;
 }
 
-
-.item img{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.233);
-    height: 210px;
-}
-
 .item:hover{
     border: 1px solid black;
     cursor: pointer;
+}
+
+/* itemImage */
+.itemImage{
+    display: flex;
+    height: 210px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.233);
+}
+
+.itemImage img{
+    width: 90%;
+    height: 90%;
+    margin: auto;
 }
 
 /* Styles itemBody */
