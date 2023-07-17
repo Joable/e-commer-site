@@ -22,10 +22,10 @@ function Product() {
                 const response = await getProductById(id);
 
                 setProduct(response.data());
-
-                setIsLoading(false);
-
+                
                 setDisplayImage(response.data().images[0]);
+                
+                setIsLoading(false);
             }catch(e){
                 console.log(e)
             }

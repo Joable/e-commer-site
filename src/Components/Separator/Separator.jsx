@@ -1,4 +1,3 @@
-import image from '../../img/osaka2.PNG';
 import styles from './Separator.module.css';
 
 
@@ -17,7 +16,7 @@ function Separator({parameters}) {
                 </div>
             </div>
 
-            <img src={image} alt="Separator"/>
+            <img src={'../../img/furniture.jpg'} alt="Separator"/>
         </div>
         </>
     );
