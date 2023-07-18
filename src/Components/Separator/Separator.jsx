@@ -1,5 +1,6 @@
 import styles from './Separator.module.css';
 
+import { Link } from 'react-router-dom';
 
 function Separator({parameters}) {
 
@@ -12,7 +13,9 @@ function Separator({parameters}) {
 
                     <p>{parameters.text}</p>
 
-                    <button className={styles.separatorButton}><b>SHOP NOW</b></button>
+                    <Link to={`${parameters.url}`} target='_blank'>
+                        <button className={styles.separatorButton}><b>SHOP NOW</b></button >
+                    </Link>
                 </div>
             </div>
 

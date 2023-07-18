@@ -9,12 +9,14 @@ function Home() {
         title: "Kitchen utensils",
         text: "Get the best utensils for your kitchen",
         image:'../../img/kitchen.jpg',
+        url:'/categories/kitchen',
         reverse: false
     };
     const lampsSeparator = {
         title: "Huge variety of lamps",
         text: "Search through our catalog of lamp and find the one that fits with you",
         image:'../../img/lamps.jpg',
+        url:'/categories/lamps',
         reverse: true
     }
 

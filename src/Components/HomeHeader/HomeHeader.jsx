@@ -1,43 +1,40 @@
-import furniture from '../../img/furniture.jpg';
-import clothes from '../../img/clothes.jpg';
-import electronics from '../../img/electronics.jpg';
-import peripherals from '../../img/peripherals.jpg';
-
 import styles from './HomeHeader.module.css';
+
+import { Link } from 'react-router-dom';
 
 function HomeHeader() {
     return ( 
         <>
         <div className={styles.headerImages}>
             <div className={styles.main}>
-                <a href="#">
-                    <img src={furniture} alt="Furniture"/>
+                <Link to="/categories/furniture" target="_blank">
+                    <img src={'../../img/furniture.jpg'} alt="Furniture"/>
                     <p></p>
                     <h3>Furniture</h3>
-                </a>
+                </Link>
             </div>
 
             <div className={styles.second}>
                 <div className={styles.clothes}>
-                    <a href="#">
-                        <img src={clothes} alt="Clothes" />
+                    <Link to="/categories/clothes" target="_blank">
+                        <img src={'../../img/clothes.jpg'} alt="Clothes" />
                         <p></p>
                         <h3>Clothes</h3>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className={styles.third}>
-                    <a href="#">
-                        <img src={peripherals} alt="Peripherals" />
+                    <Link to="/categories/peripherals" target="_blank">
+                        <img src={'../../img/peripherals.jpg'} alt="Peripherals" />
                         <p></p>
                         <h3>Peripherals</h3>
-                    </a>
+                    </Link>
 
-                    <a href="#">
-                        <img src={electronics} alt="Electronics" />
+                    <Link to="/categories/electronics" target="_blank">
+                        <img src={'../../img/electronics.jpg'} alt="Electronics" />
                         <p></p>
                         <h3>Electronics</h3>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
