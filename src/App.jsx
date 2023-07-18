@@ -21,9 +21,9 @@ function App() {
       <Routes>
           <Route path='/' element={<Home/>}/>
 
-          <Route path='/product/:id?' element={<Product/>}/>
+          <Route path='/product/:id' element={<Product/>}/>
 
-          <Route path='/categories' element={<Categories/>}/>
+          <Route path='/categories/:category' element={<Categories/>}/>
       </Routes>
     </div>
 

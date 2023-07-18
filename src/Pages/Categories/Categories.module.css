@@ -15,7 +15,6 @@
 .categoriesButtons button{
     width: 80px;
     height: 30px;
-    background-color: rgb(255, 255, 255);
     border: 1px solid black;
 }
 
@@ -23,6 +22,21 @@
     cursor: pointer;
     background-color: rgb(225, 225, 225);
 }
+
+
+.categoriesButtons button:active{
+    cursor: pointer;
+    background-color: rgb(200, 200, 200);
+}
+
+.inactiveButton{
+    background-color: rgb(255, 255, 255);
+}
+
+.activeButton{
+    background-color: rgb(225, 225, 225);
+}
+
 
 /* categoriesProducts */
 .categoriesProducts{

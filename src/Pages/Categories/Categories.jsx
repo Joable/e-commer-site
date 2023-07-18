@@ -4,17 +4,20 @@ import { useEffect, useState } from 'react';
 
 import ProductItem from '../../Components/ProductItem/ProductItem';
 
-import { getAllProducts, getFilteredProducts } from '../../Services/getProducts';
+import { getProducts } from '../../Services/getProducts';
+import { useParams } from 'react-router-dom';
 
 
 function Categories() {
+    const {category} = useParams();
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
+    const [activeCategory, setActiveCategory] = useState(category);
 
     useEffect(()=>{
         const responseProducts = async () =>{
             try{
-                const response = await getAllProducts();
+                const response = await getProducts(category);
 
                 setProducts(response.docs);
 
@@ -45,21 +48,25 @@ function Categories() {
         try{
             setIsLoading(true);
 
-            if(category){
-                const response = await getFilteredProducts(category);
+            setActiveCategory(category);
 
-                setProducts(response.docs);
-            }else{
-                const response = await getAllProducts();
+            const response = await getProducts(category);
 
-                setProducts(response.docs);
-            };
+            setProducts(response.docs);
 
             setIsLoading(false);
         }catch(e){
             console.log(e);
         };
     };
+
+    const activateButton = (category) => {
+        if(activeCategory == category){
+            return styles.activeButton;
+        }else{
+            return styles.inactiveButton;
+        }
+    }
 
     return (
         <>
@@ -69,19 +76,19 @@ function Categories() {
 
         <div className={styles.categoriesBody}>
             <div className={styles.categoriesButtons}>
-                <button onClick={()=> changeCategory('')}>All</button>
+                <button className={activateButton('all')} onClick={()=> changeCategory('all')}>All</button>
                 
-                <button onClick={()=> changeCategory('furniture')}>Furnitures</button>
+                <button className={activateButton('furniture')} onClick={()=> changeCategory('furniture')}>Furnitures</button>
                 
-                <button onClick={()=> changeCategory('kitchen')}>Kitchen</button>
+                <button className={activateButton('kitchen')} onClick={()=> changeCategory('kitchen')}>Kitchen</button>
                 
-                <button onClick={()=> changeCategory('lamps')}>Lamps</button>
+                <button className={activateButton('lamps')} onClick={()=> changeCategory('lamps')}>Lamps</button>
                 
-                <button onClick={()=> changeCategory('clothes')}>Clothes</button>
+                <button className={activateButton('clothes')} onClick={()=> changeCategory('clothes')}>Clothes</button>
                 
-                <button onClick={()=> changeCategory('electronics')}>Electronics</button>
+                <button className={activateButton('electronics')} onClick={()=> changeCategory('electronics')}>Electronics</button>
                 
-                <button onClick={()=> changeCategory('peripherals')}>Peripherals</button>
+                <button className={activateButton('peripherals')} onClick={()=> changeCategory('peripherals')}>Peripherals</button>
             </div>
 
             <div className={styles.categoriesProducts}>
