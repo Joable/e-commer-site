@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom';
 
 function Categories() {
     const {category} = useParams();
+    const categories = ['all', 'furniture', 'kitchen', 'lamps', 'clothes', 'electronics', 'peripherals'];
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
     const [activeCategory, setActiveCategory] = useState(category);
@@ -29,6 +30,10 @@ function Categories() {
 
         responseProducts();
     }, []);
+
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
     const displayProducts = () =>{
         if(isLoading){
@@ -65,8 +70,8 @@ function Categories() {
             return styles.activeButton;
         }else{
             return styles.inactiveButton;
-        }
-    }
+        };
+    };
 
     return (
         <>
@@ -76,19 +81,16 @@ function Categories() {
 
         <div className={styles.categoriesBody}>
             <div className={styles.categoriesButtons}>
-                <button className={activateButton('all')} onClick={()=> changeCategory('all')}>All</button>
-                
-                <button className={activateButton('furniture')} onClick={()=> changeCategory('furniture')}>Furnitures</button>
-                
-                <button className={activateButton('kitchen')} onClick={()=> changeCategory('kitchen')}>Kitchen</button>
-                
-                <button className={activateButton('lamps')} onClick={()=> changeCategory('lamps')}>Lamps</button>
-                
-                <button className={activateButton('clothes')} onClick={()=> changeCategory('clothes')}>Clothes</button>
-                
-                <button className={activateButton('electronics')} onClick={()=> changeCategory('electronics')}>Electronics</button>
-                
-                <button className={activateButton('peripherals')} onClick={()=> changeCategory('peripherals')}>Peripherals</button>
+
+                {categories.map((category) => 
+                <button 
+                className={activateButton(category)} 
+                onClick={()=> changeCategory(category)}
+                >
+                    {capitalizeFirstLetter(category)}
+                </button>
+                )}
+
             </div>
 
             <div className={styles.categoriesProducts}>
