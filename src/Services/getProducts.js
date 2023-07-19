@@ -18,7 +18,7 @@ export function getTrendProducts(){
 };
 
 export function getProducts(category){
-    if(category == 'all'){
+    if(category === 'all'){
         return getAllProducts();
     }else{
         return getFilteredProducts(category);
