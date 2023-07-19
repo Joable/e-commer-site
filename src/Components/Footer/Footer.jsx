@@ -1,21 +1,26 @@
 import styles from './Footer.module.css';
 
+import { Link } from 'react-router-dom'
+
 function Footer() {
     return ( 
-        <footer className={styles.footer}>
+        <footer>
             <div className={styles.footerBody}>
-                <a href="#">About</a>
+                <Link to="#">About</Link>
 
-                <a href="#">FAQs</a>
+                <Link to="#">FAQs</Link>
 
-                <a href="#">Contact Us</a>
+                <Link to="#">Contact Us</Link>
 
-                <a href="#">News</a>
+                <Link to="#">News</Link>
             </div>
+
             <div className={styles.footerLogo}>
-                <h2>
-                    E-Comerce Logo                    
-                </h2>
+                <Link className={styles.logo} to="/">
+                    <h2>
+                        Logo                    
+                    </h2>
+                </Link>
             </div>
         </footer>
     );
