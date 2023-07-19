@@ -2,6 +2,8 @@ import styles from './Nav.module.css';
 
 import { Link } from 'react-router-dom'; 
 
+import Cart from '../Cart/Cart';
+
 
 function Nav() {
 
@@ -17,7 +19,7 @@ function Nav() {
 
                 <Link to='/product/nQmNSwLXnb1JdqWn4kG5'>Product Page</Link>
 
-                <button>Carrito</button>
+                <Cart/>
             </div>
         </nav>
         </>
