@@ -13,9 +13,9 @@ function Nav() {
             </Link>
 
             <div className={styles.navButtons}>
-                <Link to='/categories/all' target='_blank'>Categories</Link>
+                <Link to='/categories/all'>Categories</Link>
 
-                <Link to='/product/nQmNSwLXnb1JdqWn4kG5' target='_blank'>Product Page</Link>
+                <Link to='/product/nQmNSwLXnb1JdqWn4kG5'>Product Page</Link>
 
                 <button>Carrito</button>
             </div>
