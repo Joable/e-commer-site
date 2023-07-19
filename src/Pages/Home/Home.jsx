@@ -18,8 +18,8 @@ function Home() {
         image:'../../img/lamps.jpg',
         url:'/categories/lamps',
         reverse: true
-    }
-
+    };
+    
     return ( 
         <>
         <div className={styles.homeHeader}>
