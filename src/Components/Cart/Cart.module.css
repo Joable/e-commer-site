@@ -19,7 +19,22 @@
     border-left: 1px solid black;
 }
 
+/* cartHeader */
+.cartHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.233);
+}
+
 /* close */
 .close{
-    float: right;
+    font-size: 25px;
+    color: black;
+    background: none;
+    border: 0;
+}
+
+.close:hover{
+    cursor: pointer;
 }
