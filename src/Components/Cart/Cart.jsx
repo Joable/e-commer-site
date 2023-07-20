@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 function Cart() {
     const [cartModal, setCartModal] = useState("");
+    const [subtotal, setSubtotal] = useState(0);
 
     useEffect(() => {
         setCartModal(document.getElementById("modal"));
@@ -29,6 +30,21 @@ function Cart() {
                     <p>Your Shopping Cart</p>
                     <button className={styles.close} onClick={handleClose}>X</button>
                 </div>
+
+                <div className={styles.cartBody}>
+                    Body
+                </div>
+
+                <div className={styles.cartFooter}>
+                    <div className={styles.subtotal}>
+                        <h3>Subtotal</h3>
+
+                        <h4>{subtotal}$</h4>
+                    </div>
+
+                    <button> BUY </button>
+                </div>
+
             </div>
         </div>
         </> 
