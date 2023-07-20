@@ -11,14 +11,22 @@ function Cart() {
         setCartModal(document.getElementById("modal"));
     }, []);
 
-    console.log(cartModal);
+    const handleOpen = () => {
+        cartModal.style.setProperty("display", "block")
+        document.body.style.setProperty("overflow", "hidden");
+    };
 
-    const handleOpen = () => cartModal.style.setProperty("display", "block");
-    const handleClose = () => cartModal.style.setProperty("display","none");
+    const handleClose = () => {
+        cartModal.style.setProperty("display", "none")
+        document.body.style.setProperty("overflow", "auto");
+    };
 
     window.onclick = (e) => {
-        if(e.target == cartModal) cartModal.style.setProperty("display","none");
-    }
+        if(e.target == cartModal) {
+            cartModal.style.setProperty("display", "none")
+            document.body.style.setProperty("overflow", "auto");
+        };
+    };
 
     return (
         <>
