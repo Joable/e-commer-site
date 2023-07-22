@@ -7,6 +7,7 @@ import {
 } from 'react';
 
 import { CartContext } from '../../Context/CartContext';
+import CartItem from '../CartItem/CartItem';
 
 
 
@@ -14,6 +15,11 @@ export default function Cart() {
     const cartProducts = useContext(CartContext);
     const [cartModal, setCartModal] = useState("");
     const [subtotal, setSubtotal] = useState(0);
+    const product = {
+        name:"Product",
+        price:"499",
+        image:"../../img/ProductImages/Mouse/Mouse1.jpg"
+    }
 
     useEffect(() => {
         setCartModal(document.getElementById("modal"));
@@ -39,8 +45,6 @@ export default function Cart() {
     return (
         <>
         <button onClick={handleOpen}>Cart</button>
-        
-        {}
 
         <div id='modal' className={styles.modal} >
             <div className={styles.cartContent}>
@@ -50,7 +54,7 @@ export default function Cart() {
                 </div>
 
                 <div className={styles.cartBody}>
-                    {cartProducts}
+                    <CartItem product={product}/>
                 </div>
 
                 <div className={styles.cartFooter}>

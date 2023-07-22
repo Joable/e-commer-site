@@ -15,27 +15,28 @@
 .categoriesButtons button{
     width: 80px;
     height: 30px;
-    border: 1px solid black;
+    border: var(--border-black);
 }
 
 .categoriesButtons button:hover{
     cursor: pointer;
-    background-color: rgb(225, 225, 225);
+    background-color: var(--white-hover);
 }
 
 
 .categoriesButtons button:active{
     cursor: pointer;
-    background-color: rgb(200, 200, 200);
+    background-color: var(--white-active)
 }
 
 .inactiveButton{
-    background-color: rgb(255, 255, 255);
+    background-color: white
 }
 
 .activeButton{
-    background-color: rgb(225, 225, 225);
+    background-color: var(--white-hover);
 }
+
 
 
 /* categoriesProducts */

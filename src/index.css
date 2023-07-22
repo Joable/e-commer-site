@@ -1,3 +1,10 @@
+#root{
+  --border-black: 1px solid black;
+  --border-gray: 1px solid rgba(0, 0, 0, 0.233);
+  --white-hover: rgb(225, 225, 225);
+  --white-active: rgb(200, 200, 200);
+}
+
 body {
   position: absolute;
   min-height: 100vh;

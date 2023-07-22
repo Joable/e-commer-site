@@ -41,6 +41,9 @@
 }
 
 /* cartBody */
+.cartBody{
+    padding: 20px;
+}
 
 /* cartFooter */
 .cartFooter{
