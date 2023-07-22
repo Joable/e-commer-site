@@ -1,9 +1,17 @@
 import styles from './Cart.module.css';
 
-import { useState, useEffect } from 'react';
+import { 
+    useState, 
+    useEffect, 
+    useContext
+} from 'react';
+
+import { CartContext } from '../../Context/CartContext';
 
 
-function Cart() {
+
+export default function Cart() {
+    const cartProducts = useContext(CartContext);
     const [cartModal, setCartModal] = useState("");
     const [subtotal, setSubtotal] = useState(0);
 
@@ -22,7 +30,7 @@ function Cart() {
     };
 
     window.onclick = (e) => {
-        if(e.target == cartModal) {
+        if(e.target === cartModal) {
             cartModal.style.setProperty("display", "none")
             document.body.style.setProperty("overflow", "auto");
         };
@@ -31,8 +39,10 @@ function Cart() {
     return (
         <>
         <button onClick={handleOpen}>Cart</button>
+        
+        {}
 
-        <div id='modal' className={styles.cart} >
+        <div id='modal' className={styles.modal} >
             <div className={styles.cartContent}>
                 <div className={styles.cartHeader}>
                     <p>Your Shopping Cart</p>
@@ -40,7 +50,7 @@ function Cart() {
                 </div>
 
                 <div className={styles.cartBody}>
-                    Body
+                    {cartProducts}
                 </div>
 
                 <div className={styles.cartFooter}>
@@ -58,5 +68,3 @@ function Cart() {
         </> 
      );
 }
-
-export default Cart;

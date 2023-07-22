@@ -1,5 +1,5 @@
 /* modal */
-.cart{
+.modal{
     display: none;
     position: fixed;
     z-index: 1;
@@ -64,8 +64,12 @@
 
 .cartFooter button:hover{
     cursor: pointer;
+    background-color: rgb(225, 225, 225);
 }
 
+.cartFooter button:active{
+    background-color: rgb(200, 200, 200);
+}
 /* subtotal */
 .subtotal h3{
     margin: 0;
