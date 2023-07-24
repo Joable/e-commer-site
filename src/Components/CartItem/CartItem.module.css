@@ -2,11 +2,37 @@
 .item{
     display: flex;
     width: 100%;
-    height: 200px;
-    border: 1px solid black;
+    height: 120px;
+    border: var(--border-gray);
 }
 
 .item img{
+    width: 30%;
     padding: 10px;
-    border-right: 1px solid black;
+    border-right: var(--border-gray);
+}
+
+/* itemDetails */
+.itemDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px;
+}
+
+.itemDetails h3,h4{
+    margin: 0;
+}
+
+/* detailsHeader */
+.detailsHeader{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* detailsQuantity */
+.detailsQuantity{
+    display: flex;
+    justify-content: space-between;
 }

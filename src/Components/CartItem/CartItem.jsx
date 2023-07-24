@@ -6,9 +6,21 @@ export default function CartItem({product}){
             <img src={product.image} alt={product.name} />
 
             <div className={styles.itemDetails}>
-                <h4>{product.name}</h4>
+                <div className={styles.detailsHeader}>
+                    <h4>{product.name}</h4>
+                        
+                    <h3>{product.price}$</h3>
+                </div>
 
-                <h3>{product.price}$ {product.quantity}</h3>
+                <div className={styles.detailsQuantity}>
+                    <div>
+                    <button>-</button>
+                    <p>num</p>
+                    <button>+</button>
+                    </div>
+
+                    <button>X</button>
+                </div>
             </div>
         </div>
     );

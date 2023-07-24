@@ -14,7 +14,7 @@
 
 .headerButtons button:hover{
     cursor: pointer;
-    background-color: rgb(225, 225, 225);
+    background-color: var(--white-hover);
 }
 
 /* trendItems */
