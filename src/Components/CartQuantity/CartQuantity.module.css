@@ -1,0 +1,23 @@
+/* quantity */
+.quantity{
+    display: flex;
+    border: var(--border-black);
+}
+
+.quantity button{
+    background-color: white;
+    border: 0;
+}
+
+.quantity button:hover{
+    cursor: pointer;
+    background-color: var(--white-hover);
+}
+
+.quantity p{
+    margin: 0;
+    padding: 0 5px 0 5px;
+    border: var(--border-black);
+    border-bottom: 0;
+    border-top: 0;
+}
