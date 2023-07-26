@@ -2,7 +2,7 @@ import styles from './CartItem.module.css';
 
 import CartQuantity from '../CartQuantity/CartQuantity';
 
-export default function CartItem({product}){
+export default function CartItem({id, product}){
     return(
         <div className={styles.item}>
             <img src={product.image} alt={product.name} />
@@ -15,7 +15,7 @@ export default function CartItem({product}){
                 </div>
 
                 <div className={styles.detailsQuantity}>
-                    <CartQuantity/>
+                    <CartQuantity id={id} quantity={product.quantity}/>
 
                     <button>X</button>
                 </div>

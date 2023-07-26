@@ -2,27 +2,32 @@ import styles from './Cart.module.css';
 
 import { 
     useState, 
-    useEffect, 
-    useContext
+    useEffect
 } from 'react';
 
-import { CartContext } from '../../Context/CartContext';
+import { getCartInventory } from '../../Services/getCartInventory';
+
 import CartItem from '../CartItem/CartItem';
 
 
-
 export default function Cart() {
-    const cartProducts = useContext(CartContext);
+    const [cartProducts, setCartPorducts] = useState([]);
     const [cartModal, setCartModal] = useState("");
     const [subtotal, setSubtotal] = useState(0);
-    const product = {
-        name:"Product",
-        price:"499",
-        image:"../../img/ProductImages/Mouse/Mouse1.jpg"
-    }
 
     useEffect(() => {
-        setCartModal(document.getElementById("modal"));
+        const getData = async () => {
+            try{
+                const response = await getCartInventory();
+
+                setCartPorducts(response.docs);
+            }catch(e){
+                console.log(e);
+            };
+        };
+
+        setCartModal(document.getElementById('modal'));
+        getData();
     }, []);
 
     const handleOpen = () => {
@@ -54,7 +59,7 @@ export default function Cart() {
                 </div>
 
                 <div className={styles.cartBody}>
-                    <CartItem product={product}/>
+                    {cartProducts.map((product) => <CartItem id={product.id} product={product.data()}/>)}
                 </div>
 
                 <div className={styles.cartFooter}>

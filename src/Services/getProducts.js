@@ -1,20 +1,22 @@
 import firebase from "../Config/Firebase";
 
+const productsCollection = firebase.db.collection('products');
+
 export function getAllProducts(){
-    return firebase.db.collection('products').get();
+    return productsCollection.get();
 };
 
 export function getProductById(id){
-    return firebase.db.collection('products').doc(id).get();
+    return productsCollection.doc(id).get();
 };
 
 
 export function getFilteredProducts(category){
-    return firebase.db.collection('products').where('category', '==', category).get();
+    return productsCollection.where('category', '==', category).get();
 };
 
 export function getTrendProducts(){
-    return firebase.db.collection('products').where('trend', '==', true).get();
+    return productsCollection.where('trend', '==', true).get();
 };
 
 export function getProducts(category){

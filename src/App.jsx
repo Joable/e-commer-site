@@ -10,8 +10,6 @@ import {
   Route
 } from 'react-router-dom'
 
-import { CartContext } from './Context/CartContext';
-
 import Footer from './Components/Footer/Footer';
 import Nav from './Components/Nav/Nav';
 import Home from './Pages/Home/Home';
@@ -20,24 +18,22 @@ import Categories from './Pages/Categories/Categories';
 
 
 function App() {
-  const cartProducts = [];
 
   return (
     <Router>
 
-      <CartContext.Provider value={cartProducts}>
-        <Nav/>
+      <Nav/>
 
-        <div className="center">
-          <Routes>
-              <Route path='/' element={<Home/>}/>
+      <div className="center">
+        <Routes>
+            <Route path='/' element={<Home/>}/>
 
-              <Route path='/product/:id' element={<Product/>}/>
+            <Route path='/product/:id' element={<Product/>}/>
 
-              <Route path='/categories/:category' element={<Categories/>}/>
-          </Routes>
-        </div>
-      </CartContext.Provider>
+            <Route path='/categories/:category' element={<Categories/>}/>
+        </Routes>
+      </div>
+
 
       <Footer/>
 
