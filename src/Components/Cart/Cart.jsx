@@ -2,33 +2,21 @@ import styles from './Cart.module.css';
 
 import { 
     useState, 
-    useEffect
+    useEffect,
+    useContext
 } from 'react';
 
-import { getCartInventory } from '../../Services/getCartInventory';
+import { CartContext } from '../../Context/CartContext';
 
 import CartItem from '../CartItem/CartItem';
 
 
 export default function Cart() {
-    const [cartProducts, setCartPorducts] = useState([]);
     const [cartModal, setCartModal] = useState("");
     const [subtotal, setSubtotal] = useState(0);
+    const {cartProducts, setCartProducts} = useContext(CartContext);
 
-    useEffect(() => {
-        const getData = async () => {
-            try{
-                const response = await getCartInventory();
-
-                setCartPorducts(response.docs);
-            }catch(e){
-                console.log(e);
-            };
-        };
-
-        setCartModal(document.getElementById('modal'));
-        getData();
-    }, []);
+    useEffect(() => setCartModal(document.getElementById('modal')), []);
 
     const handleOpen = () => {
         cartModal.style.setProperty("display", "block")
@@ -42,9 +30,21 @@ export default function Cart() {
 
     window.onclick = (e) => {
         if(e.target === cartModal) {
-            cartModal.style.setProperty("display", "none")
-            document.body.style.setProperty("overflow", "auto");
+            handleClose();
         };
+    };
+
+    const displayCartItems = () => {
+        let productsArray = [];
+
+        Object.keys(cartProducts).forEach((key) => productsArray.push(
+            <CartItem 
+            id={key} 
+            product={cartProducts[key]}
+            />
+        ));
+
+        return productsArray;
     };
 
     return (
@@ -59,7 +59,7 @@ export default function Cart() {
                 </div>
 
                 <div className={styles.cartBody}>
-                    {cartProducts.map((product) => <CartItem id={product.id} product={product.data()}/>)}
+                    {displayCartItems()}
                 </div>
 
                 <div className={styles.cartFooter}>
