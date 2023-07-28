@@ -25,10 +25,11 @@ export default function CartQuantity({id, quantity}){
                 quantity: countQuantity + 1
             }
         });
-        //setProductQuantity(id, countQuantity + 1);
+
+        setProductQuantity(id, countQuantity + 1);
     };
     const subtract = () => {
-        if(countQuantity > 0) {
+        if(countQuantity > 1) {
             setCountQuantity(countQuantity - 1);
 
             setCartProducts({
@@ -39,8 +40,7 @@ export default function CartQuantity({id, quantity}){
                 }
             });
 
-            console.log(cartProducts);
-            //setProductQuantity(countQuantity - 1);
+            setProductQuantity(id, countQuantity - 1);
         };
     };
 
@@ -49,7 +49,6 @@ export default function CartQuantity({id, quantity}){
             <button onClick={subtract}>-</button>
 
             <p>{countQuantity}</p>
-            {console.log(cartProducts)}
 
             <button onClick={add}>+</button>
         </div>
