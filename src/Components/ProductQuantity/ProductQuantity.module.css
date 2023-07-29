@@ -1,0 +1,34 @@
+/* count */
+.count{
+    display: flex;
+    justify-content: space-between;
+    border: var(--border-black);
+    width: 130px;
+}
+
+.count button{
+    width: 33.3%;
+    background-color: white;
+    border: 0;
+    font-size: 20px;
+}
+
+.count button:hover{
+    cursor: pointer;
+    background-color: var(--white-hover);
+}
+
+/* countDisplay */
+.countDisplay{
+    width: 33.3%;
+    margin: 0;
+    border: var(--border-black);
+    border-bottom: 0;
+    border-top: 0;
+}
+
+.countDisplay h3{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

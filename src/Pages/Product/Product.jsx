@@ -3,9 +3,10 @@ import styles from './Product.module.css';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
-
 import { getProductById } from '../../Services/getProducts';
+
+import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
+import ProductQuantity from '../../Components/ProductQuantity/ProductQuantity';
 
 function Product() {
     const [product, setProduct] = useState({
@@ -50,7 +51,10 @@ function Product() {
                     <img src={displayImage} alt="Product"/>
     
                     <div className={styles.imageSelector}>
-                        {product.images.map((image) => <img onClick={() => setDisplayImage(image)} src={image} alt={product.name}/>)}
+                        {product.images.map((image) => <img 
+                            onClick={() => setDisplayImage(image)} 
+                            src={image} alt={product.name}
+                        />)}
                     </div>
                 </div>
     
@@ -62,7 +66,7 @@ function Product() {
                     <div className={styles.productPrice}>
                         <h3>Quantity</h3>
     
-                        <p>quiantity counter</p>
+                        <ProductQuantity/>
     
                         <h3>{product.price}$</h3>
                     </div>

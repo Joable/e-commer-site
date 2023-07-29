@@ -37,10 +37,14 @@
     cursor: pointer;
 }
 
-/* productDetails */
+/* productDescription */
 .productDescription{
     width: 40%;
     margin-top: 10%;
+}
+
+.productDescription p{
+    margin-bottom: 50px;
 }
 
 /* productPrice */
@@ -49,10 +53,15 @@
     justify-content: space-between;
 }
 
+.productPrice h3{
+    margin: 7px 0;
+}
+
 /* productButtons */
 .productButtons{
     display: flex;
     justify-content: space-between;
+    margin-top: 50px;
 }
 
 .productButtons button{
