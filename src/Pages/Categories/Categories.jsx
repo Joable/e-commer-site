@@ -66,7 +66,7 @@ function Categories() {
     };
 
     const activateButton = (category) => {
-        if(activeCategory == category){
+        if(activeCategory === category){
             return styles.activeButton;
         }else{
             return styles.inactiveButton;
