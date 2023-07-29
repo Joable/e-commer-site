@@ -14,7 +14,8 @@ function Product() {
         images:[]
     });
     const [displayImage, setDisplayImage] = useState("");
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
+    const [quantity, setQuantity] = useState(0);
     const {id} = useParams();
     
     useEffect(() => {
@@ -66,7 +67,7 @@ function Product() {
                     <div className={styles.productPrice}>
                         <h3>Quantity</h3>
     
-                        <ProductQuantity/>
+                        <ProductQuantity quantity={quantity} changeQuantity={setQuantity}/>
     
                         <h3>{product.price}$</h3>
                     </div>

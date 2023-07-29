@@ -2,14 +2,13 @@ import styles from './ProductQuantity.module.css';
 
 import { useState } from 'react';
 
-export default function ProductQuantity(){
-    const [quantity, setQuantity] = useState(0);
+export default function ProductQuantity({quantity, changeQuantity}){
 
     const add = () => {
-        setQuantity(quantity + 1);
+        changeQuantity(quantity + 1);
     };
     const substract = () => {
-        if(quantity > 0)setQuantity(quantity - 1);
+        if(quantity > 0)changeQuantity(quantity - 1);
     };
     
     return(
