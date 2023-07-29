@@ -18,6 +18,10 @@
     background-color: var(--white-hover);
 }
 
+.count button:active{
+    background-color: var(--white-active);
+}
+
 /* countDisplay */
 .countDisplay{
     width: 33.3%;

@@ -1,7 +1,23 @@
 import styles from './AddToCart.module.css';
 
-export default function AddToCart(){
+import { useContext } from 'react';
+
+import { CartContext } from '../../Context/CartContext';
+
+export default function AddToCart({productData, changeQuantity}){
+    const {cartProducts, setCartProducts} = useContext(CartContext)
+
+    const add = () => {
+        setCartProducts({
+            ...cartProducts,
+                [productData.id]: {...productData}
+        });
+    };
+
     return(
-        <button className={styles.whiteButton}>ADD TO CART</button>
+        <>
+        {console.log(productData)}
+        <button onClick={add} className={styles.whiteButton}>ADD TO CART</button>
+        </>
     );
 }
