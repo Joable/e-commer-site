@@ -70,25 +70,19 @@
     cursor:pointer;
 }
 
-/* whiteButton */
-.whiteButton{
-    border: 2px solid black;
-    background-color: rgb(255, 255, 255);
-}
-
-.whiteButton:hover{
-    background-color: rgb(225, 225, 225);
-}
-
 /* redButton */
 .redButton{
     color: white;
     border: 0;
-    background-color: rgb(255, 0, 0);
+    background-color: red;
 }
 
 .redButton:hover{
     background-color: rgb(225, 0, 0);
+}
+
+.redButton:active{
+    background-color: rgb(200, 0, 0);
 }
 
 /* productDetails */

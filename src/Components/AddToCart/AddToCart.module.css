@@ -1,0 +1,13 @@
+/* whiteButton */
+.whiteButton{
+    border: 2px solid black;
+    background-color: white;
+}
+
+.whiteButton:hover{
+    background-color: var(--white-hover);
+}
+
+.whiteButton:active{
+    background-color: var(--white-active);
+}

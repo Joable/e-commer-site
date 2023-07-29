@@ -7,6 +7,7 @@ import { getProductById } from '../../Services/getProducts';
 
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
 import ProductQuantity from '../../Components/ProductQuantity/ProductQuantity';
+import AddToCart from '../../Components/AddToCart/AddToCart';
 
 function Product() {
     const [product, setProduct] = useState({
@@ -73,7 +74,7 @@ function Product() {
                     </div>
     
                     <div className={styles.productButtons}>
-                        <button className={styles.whiteButton}>ADD TO CART</button>
+                        <AddToCart/>
     
                         <button className={styles.redButton}>BUY NOW</button>
                     </div>
