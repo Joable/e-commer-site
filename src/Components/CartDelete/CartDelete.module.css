@@ -1,0 +1,15 @@
+/* deleteButton */
+.deleteButton{
+    font-size: 20px;
+    background-color: white;
+    border: 0;
+}
+
+.deleteButton:hover{
+    cursor: pointer;
+    background-color: var(--white-hover);
+}
+
+.deleteButton:active{
+    background-color: var(--white-active);
+}

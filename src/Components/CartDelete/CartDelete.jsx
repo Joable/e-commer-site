@@ -21,6 +21,6 @@ export default function CartDelete({id, hideItem}){
     };
 
     return(
-        <button onClick={handleDelete}>X</button>
+        <button onClick={handleDelete} className={styles.deleteButton}>X</button>
     );
 }
