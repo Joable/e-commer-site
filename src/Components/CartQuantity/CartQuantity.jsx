@@ -11,13 +11,11 @@ import { setProductQuantity } from '../../Services/setCartInventory';
 
 
 
-export default function CartQuantity({id, quantity}){
-    const [countQuantity, setCountQuantity] = useState(quantity);
+export default function CartQuantity({id}){
     const {cartProducts, setCartProducts} = useContext(CartContext);
+    const countQuantity = cartProducts[id].quantity;
 
     const add = () => {
-        setCountQuantity(countQuantity + 1)
-        
         setCartProducts({
             ...cartProducts,
             [id]: {
@@ -30,8 +28,6 @@ export default function CartQuantity({id, quantity}){
     };
     const subtract = () => {
         if(countQuantity > 1) {
-            setCountQuantity(countQuantity - 1);
-
             setCartProducts({
                 ...cartProducts,
                 [id]: {

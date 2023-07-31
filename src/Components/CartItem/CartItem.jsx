@@ -15,7 +15,7 @@ export default function CartItem({id, product}){
                 </div>
 
                 <div className={styles.detailsQuantity}>
-                    <CartQuantity id={id} quantity={product.quantity}/>
+                    <CartQuantity id={id}/>
 
                     <button>X</button>
                 </div>
