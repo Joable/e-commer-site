@@ -1,6 +1,7 @@
 import styles from './CartItem.module.css';
 
 import CartQuantity from '../CartQuantity/CartQuantity';
+import CartDelete from '../CartDelete/CartDelete';
 
 export default function CartItem({id, product}){
     return(
@@ -17,7 +18,7 @@ export default function CartItem({id, product}){
                 <div className={styles.detailsQuantity}>
                     <CartQuantity id={id}/>
 
-                    <button>X</button>
+                    <CartDelete id={id}/>
                 </div>
             </div>
         </div>
