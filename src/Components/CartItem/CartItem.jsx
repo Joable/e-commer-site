@@ -1,11 +1,21 @@
 import styles from './CartItem.module.css';
 
+import { useState } from 'react';
+
 import CartQuantity from '../CartQuantity/CartQuantity';
 import CartDelete from '../CartDelete/CartDelete';
 
 export default function CartItem({id, product}){
-    return(
-        <div className={styles.item}>
+    const [isDeleted, setIsDeleted] = useState(false);
+
+    if(isDeleted){
+
+        <></>
+
+    }else{
+
+        return(
+            <div className={styles.item}>
             <img src={product.image} alt={product.name} />
 
             <div className={styles.itemDetails}>
@@ -18,9 +28,10 @@ export default function CartItem({id, product}){
                 <div className={styles.detailsQuantity}>
                     <CartQuantity id={id}/>
 
-                    <CartDelete id={id}/>
+                    <CartDelete id={id} hideItem={setIsDeleted}/>
                 </div>
             </div>
         </div>
-    );
+        );
+    };
 }

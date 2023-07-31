@@ -21,3 +21,7 @@ export function addToInventory(product){
         quantity:product.quantity
     });
 }
+
+export function deleteProduct(id){
+    return firebase.db.collection('cart').doc(id).delete();
+}
