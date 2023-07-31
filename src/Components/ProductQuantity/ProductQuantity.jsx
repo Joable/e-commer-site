@@ -1,7 +1,5 @@
 import styles from './ProductQuantity.module.css';
 
-import { useState } from 'react';
-
 export default function ProductQuantity({quantity, changeQuantity}){
 
     const add = () => {
