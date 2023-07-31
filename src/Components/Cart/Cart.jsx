@@ -9,11 +9,12 @@ import {
 import { CartContext } from '../../Context/CartContext';
 
 import CartItem from '../CartItem/CartItem';
+import Subtotal from '../Subtotal/Subtotal';
 
 
 export default function Cart() {
     const [cartModal, setCartModal] = useState("");
-    const [subtotal, setSubtotal] = useState(0);
+    
     const {cartProducts, setCartProducts} = useContext(CartContext);
 
     useEffect(() => setCartModal(document.getElementById('modal')), []);
@@ -63,11 +64,7 @@ export default function Cart() {
                 </div>
 
                 <div className={styles.cartFooter}>
-                    <div className={styles.subtotal}>
-                        <h3>Subtotal</h3>
-
-                        <h4>{subtotal}$</h4>
-                    </div>
+                    <Subtotal/>
 
                     <button> BUY </button>
                 </div>
