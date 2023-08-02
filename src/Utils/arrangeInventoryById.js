@@ -1,4 +1,4 @@
-export function createInventoryById(response){
+export function arrangeInventoryById(response){
     let newInventory = {}; 
     let idObject = {};
     

@@ -1,6 +1,6 @@
 import firebase from "../Config/Firebase";
-import { createInventoryById } from "../Utils/createInventoryById";
+import { arrangeInventoryById } from "../Utils/arrangeInventoryById";
 
 export function getCartInventory(){
-    return firebase.db.collection('cart').get().then((response) => createInventoryById(response));
+    return firebase.db.collection('cart').get().then((response) => arrangeInventoryById(response));
 }
