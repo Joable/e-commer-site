@@ -11,32 +11,6 @@
     height: 88vh;
 }
 
-/* productImages */
-.productImages{
-    display: flex;
-    flex-direction: column;
-    width: 55%;
-}
-
-.productImages img{
-    height: 80%;
-    width: 100%;
-}
-/* imageSelector */
-.imageSelector{
-    display: flex;
-    width: 100%;
-    height: 20%;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.imageSelector img{
-    width: 100px;
-    margin: 0 10px;
-    cursor: pointer;
-}
-
 /* productDescription */
 .productDescription{
     width: 40%;

@@ -8,13 +8,13 @@ import { getProductById } from '../../Services/getProducts';
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
 import ProductQuantity from '../../Components/ProductQuantity/ProductQuantity';
 import AddToCart from '../../Components/AddToCart/AddToCart';
+import ImageSelector from '../../Components/ImageSelector/ImageSelector';
 
 function Product() {
     const [product, setProduct] = useState({
         details:[],
         images:[]
     });
-    const [displayImage, setDisplayImage] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [quantity, setQuantity] = useState(1);
     const {id} = useParams();
@@ -25,8 +25,6 @@ function Product() {
                 const response = await getProductById(id);
 
                 setProduct(response.data());
-                
-                setDisplayImage(response.data().images[0]);
                 
                 setIsLoading(false);
             }catch(e){
@@ -49,16 +47,7 @@ function Product() {
             <h2 className={styles.productTitle}>{product.name}</h2>
     
             <div className={styles.productBody}>
-                <div className={styles.productImages}>
-                    <img src={displayImage} alt="Product"/>
-    
-                    <div className={styles.imageSelector}>
-                        {product.images.map((image) => <img 
-                            onClick={() => setDisplayImage(image)} 
-                            src={image} alt={product.name}
-                        />)}
-                    </div>
-                </div>
+                <ImageSelector images={product.images}/>
     
                 <div className={styles.productDescription}>
                     <p>
