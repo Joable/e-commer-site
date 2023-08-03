@@ -53,9 +53,12 @@ export default function Cart() {
         <button onClick={handleOpen}>Cart</button>
 
         <div id='modal' className={styles.modal} >
+
             <div className={styles.cartContent}>
+
                 <div className={styles.cartHeader}>
                     <p>Your Shopping Cart</p>
+                    
                     <button className={styles.close} onClick={handleClose}>X</button>
                 </div>
 

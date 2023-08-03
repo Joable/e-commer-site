@@ -12,6 +12,8 @@
 
 /* cartContent */
 .cartContent{
+    display: flex;
+    flex-direction: column;
     position: relative;
     float: right;
     width: 30%;
@@ -42,7 +44,29 @@
 
 /* cartBody */
 .cartBody{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100%;
     padding: 20px;
+}
+
+
+.cartBody::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  
+.cartBody::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+  
+.cartBody::-webkit-scrollbar-thumb {
+  background: #888;
+}
+  
+.cartBody::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /* cartFooter */
@@ -50,9 +74,7 @@
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    bottom: 0;
-    width: 481px;
+    width: 100%;
     padding: 10px;
     border-top: var(--border-gray);
 }
