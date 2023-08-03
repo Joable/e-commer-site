@@ -9,15 +9,13 @@ export default function CartDelete({id, hideItem}){
     const {cartProducts, setCartProducts} = useContext(CartContext);
 
     const handleDelete = () => {
-        hideItem(true);
+        let newCart = {...cartProducts};
 
-        deleteProduct(id).then( () =>{
-            let newCart = {...cartProducts};
+        delete newCart[id];
 
-            delete newCart[id];
+        setCartProducts(newCart);
 
-            setCartProducts(newCart);
-        });
+        deleteProduct(id);
     };
 
     return(
