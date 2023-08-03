@@ -35,7 +35,7 @@ export default function AddToCart({productData, changeQuantity}){
             });
         };
             
-        changeQuantity(0);
+        changeQuantity(1);
     };
 
     return(

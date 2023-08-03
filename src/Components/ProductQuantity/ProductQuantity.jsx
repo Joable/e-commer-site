@@ -6,7 +6,7 @@ export default function ProductQuantity({quantity, changeQuantity}){
         changeQuantity(quantity + 1);
     };
     const substract = () => {
-        if(quantity > 0)changeQuantity(quantity - 1);
+        if(quantity > 1)changeQuantity(quantity - 1);
     };
     
     return(

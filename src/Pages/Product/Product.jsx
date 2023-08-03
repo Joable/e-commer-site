@@ -16,7 +16,7 @@ function Product() {
     });
     const [displayImage, setDisplayImage] = useState("");
     const [isLoading, setIsLoading] = useState(true);
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const {id} = useParams();
     
     useEffect(() => {
