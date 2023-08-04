@@ -21,7 +21,15 @@
 /* productDetails */
 .productDetails{
     background-color: aliceblue;
-    padding-left: 20px;
+    padding: 15px;
+}
+
+.productDetails h3{
+    margin: 0 0 10px 0;
+}
+
+.productDetails h4{
+    margin: 0;
 }
 
 /* trend */
