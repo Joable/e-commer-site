@@ -1,14 +1,16 @@
 import styles from './Product.module.css';
 
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { 
+    useEffect, 
+    useState 
+} from 'react';
 
 import { getProductById } from '../../Services/getProducts';
 
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
-import ProductQuantity from '../../Components/ProductQuantity/ProductQuantity';
-import AddToCart from '../../Components/AddToCart/AddToCart';
 import ImageSelector from '../../Components/ImageSelector/ImageSelector';
+import ProductDescription from '../../Components/ProductDescription/ProductDescription';
 
 function Product() {
     const [product, setProduct] = useState({
@@ -16,7 +18,7 @@ function Product() {
         images:[]
     });
     const [isLoading, setIsLoading] = useState(true);
-    const [quantity, setQuantity] = useState(1);
+    
     const {id} = useParams();
     
     useEffect(() => {
@@ -49,35 +51,9 @@ function Product() {
             <div className={styles.productBody}>
                 <ImageSelector images={product.images}/>
     
-                <div className={styles.productDescription}>
-                    <p>
-                        {product.description}
-                    </p>
-    
-                    <div className={styles.productPrice}>
-                        <h3>Quantity</h3>
-    
-                        <ProductQuantity quantity={quantity} changeQuantity={setQuantity}/>
-    
-                        <h3>{product.price}$</h3>
-                    </div>
-    
-                    <div className={styles.productButtons}>
-                        <AddToCart 
-                        productData ={{
-                            id:id,
-                            name:product.name,
-                            price:product.price,
-                            image:product.images[0],
-                            quantity: quantity
-                        }}
-                        changeQuantity={setQuantity}
-                        />
-    
-                        <button className={styles.redButton}>BUY NOW</button>
-                    </div>
-                </div>
+                <ProductDescription product={product} id={id}/>
             </div>
+            
     
             <div className={styles.detailsSection}>
                 {product.details.map((detail) => <div className={styles.productDetails}><h3>{detail.name}</h3> <h4>{detail.description}</h4></div>)}

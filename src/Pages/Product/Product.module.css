@@ -11,55 +11,7 @@
     height: 88vh;
 }
 
-/* productDescription */
-.productDescription{
-    width: 40%;
-    margin-top: 10%;
-}
-
-.productDescription p{
-    margin-bottom: 50px;
-}
-
-/* productPrice */
-.productPrice{
-    display: flex;
-    justify-content: space-between;
-}
-
-.productPrice h3{
-    margin: 7px 0;
-}
-
-/* productButtons */
-.productButtons{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-}
-
-.productButtons button{
-    width: 45%;
-    height: 50px;
-    cursor:pointer;
-}
-
-/* redButton */
-.redButton{
-    color: white;
-    border: 0;
-    background-color: red;
-}
-
-.redButton:hover{
-    background-color: rgb(225, 0, 0);
-}
-
-.redButton:active{
-    background-color: rgb(200, 0, 0);
-}
-
-/* productDetails */
+/* detailsSection */
 .detailsSection{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
