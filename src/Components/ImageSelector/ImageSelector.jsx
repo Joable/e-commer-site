@@ -8,7 +8,10 @@ export default function ImageSelector({ images }){
 
     return(
         <div className={styles.productImages}>
-            <img src={displayImage} alt="Product"/>
+
+            <div className={styles.image}>
+                <img src={displayImage} alt="Product"/>
+            </div>
         
             <div className={styles.imageSelector}>
                 {images.map((image) => <img 
@@ -17,6 +20,7 @@ export default function ImageSelector({ images }){
                     alt={"Product"}
                 />)}
             </div>
+
         </div>
     )
 }
