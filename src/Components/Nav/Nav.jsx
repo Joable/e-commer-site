@@ -9,17 +9,19 @@ function Nav() {
 
     return ( 
         <>
-        <nav className={styles.navContainer}>
-            <Link className={styles.navLogo} to='/'>
-                <h1>Logo</h1>
-            </Link>
+        <nav>
+            <div className={styles.navContainer}>
+                <Link className={styles.navLogo} to='/'>
+                    <h1>Logo</h1>
+                </Link>
 
-            <div className={styles.navButtons}>
-                <Link to='/categories/all'>Categories</Link>
+                <div className={styles.navButtons}>
+                    <Link to='/categories/all'>Categories</Link>
 
-                <Link to='/product/nQmNSwLXnb1JdqWn4kG5'>Product Page</Link>
+                    <Link to='/product/nQmNSwLXnb1JdqWn4kG5'>Product Page</Link>
 
-                <Cart/>
+                    <Cart/>
+                </div>
             </div>
         </nav>
         </>

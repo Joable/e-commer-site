@@ -1,12 +1,12 @@
 /* navContainer */
 .navContainer{
+    display: flex;
+    justify-content: space-between;
     margin: auto;
-    width: 70%;
+    width: 1000px;
     z-index: 1;
     position: sticky;
     top: 0;
-    display: flex;
-    justify-content: space-between;
     background-color: white;
 }
 
