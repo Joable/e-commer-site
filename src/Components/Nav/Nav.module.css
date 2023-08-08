@@ -2,7 +2,6 @@ nav{
     position: sticky;
     z-index: 1;
     top: 0;
-
 }
 
 /* navContainer */
@@ -34,4 +33,10 @@ nav{
 .navLogo{
     text-decoration: none;
     color: black;
+}
+
+@media (max-width:1000px){
+    .navContainer{
+        width: auto;
+    }
 }
