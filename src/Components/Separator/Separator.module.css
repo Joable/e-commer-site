@@ -56,3 +56,39 @@
 .textBody button:hover{
     cursor: pointer;
 }
+
+@media (max-width:1000px){
+    /* body */
+    .separatorBody{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        height: 350px;
+    }
+
+    .bodyReverse{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        height: 350px;
+    }
+
+    /* separatorImage */
+    .separatorImage{
+        margin: auto;
+        width: 520px;
+        height: 50%;
+    }
+
+    /* textContainer */
+    .textContainer{
+        justify-content: start;
+        width: 520px;
+    }
+    
+    /* textBody */
+    .textBody{
+        justify-content: start;
+        width: 100%;
+    }
+}
