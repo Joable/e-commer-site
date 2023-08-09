@@ -1,10 +1,29 @@
+/* carousel */
+.carousel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* trendHeader */
 .trendHeader{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+}
+
+.trendHeader h2{
+    float: left;
 }
 
 /* headerButtons */
+.headerButtons{
+    display: flex;
+    align-items: center;
+}
+
+
 .headerButtons button{
     margin-right: 5px;
     color: black;
@@ -17,6 +36,11 @@
     background-color: var(--white-hover);
 }
 
+/* trendBody */
+.trendBody{
+    overflow: hidden;
+}
+
 /* trendItems */
 .trendItems{
     --x-axis : 0%;
@@ -27,7 +51,18 @@
     transform: translateX(var(--x-axis));
 }
 
-/* trendBody */
-.trendBody{
-    overflow: hidden;
+
+@media (max-width:1000px){
+    /* trendBody */
+    .trendBody{
+        width: 500px;
+    }
+    /* trendItems */
+    .trendItems{
+        width: 500%;
+    }
+    /* trendHeader */
+    .trendHeader{
+        width: 500px;
+    }
 }

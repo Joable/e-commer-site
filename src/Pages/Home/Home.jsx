@@ -25,18 +25,12 @@ function Home() {
         <div className={styles.homeHeader}>
             <HomeHeader/>
         </div>
-
-        <div className={styles.separator}>
-            <Separator parameters={kitchenSeparator}/>
-        </div>
         
-        <div className={styles.trendItems}>
-            <ProductCarousel/>
-        </div>
+        <Separator parameters={kitchenSeparator}/>
         
-        <div className={styles.separator}>
-            <Separator parameters={lampsSeparator}/>
-        </div>
+        <ProductCarousel/>
+        
+        <Separator parameters={lampsSeparator}/>
         </>
     );
 }
