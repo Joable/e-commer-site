@@ -45,24 +45,26 @@ function Product() {
         );
     }else{
         return (
-            <>
-            <h2 className={styles.productTitle}>{product.name}</h2>
-    
-            <div className={styles.productBody}>
-                <ImageSelector images={product.images}/>
-    
-                <ProductDescription product={product} id={id}/>
-            </div>
-            
-    
-            <div className={styles.detailsSection}>
-                {product.details.map((detail) => <div className={styles.productDetails}><h3>{detail.name}</h3> <h4>{detail.description}</h4></div>)}
-            </div>
-    
-            <div className={styles.trend}>
-                <ProductCarousel/>
-            </div>
-            </> 
+            <div className={styles.product}>
+
+                <h2 className={styles.productTitle}>{product.name}</h2>
+        
+                <div className={styles.productBody}>
+                    <ImageSelector images={product.images}/>
+        
+                    <ProductDescription product={product} id={id}/>
+                </div>
+                
+        
+                <div className={styles.detailsSection}>
+                    {product.details.map((detail) => <div className={styles.productDetails}><h3>{detail.name}</h3> <h4>{detail.description}</h4></div>)}
+                </div>
+        
+                <div className={styles.trend}>
+                    <ProductCarousel/>
+                </div>
+
+            </div> 
         );
     }
 }
