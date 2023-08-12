@@ -45,3 +45,11 @@
 .redButton:active{
     background-color: rgb(200, 0, 0);
 }
+
+@media (max-width: 1000px){
+    /* description */
+    .description{
+        width: 100%;
+        margin: 0;
+    }
+}
