@@ -53,4 +53,9 @@
         align-items: center;
         width: 500px;
     }
+
+    .detailsSection{
+        width: 500px;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
