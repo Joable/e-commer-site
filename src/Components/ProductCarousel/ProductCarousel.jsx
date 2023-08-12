@@ -6,15 +6,17 @@ import { useEffect, useState } from 'react';
 import { getTrendProducts } from '../../Services/getProducts'
 
 function ProductCarousel() {
-    const [trendProducts, setTrendProducts] = useState([])
+    const [trendProducts, setTrendProducts] = useState([]);
+    let xAxisProperty = 0;
     const arrow1 = "<--", arrow2 = "-->";
 
     useEffect(() => {
         const responseProduct = async () =>{
             try{
-                 const response = await getTrendProducts();
+                const response = await getTrendProducts();
 
                 setTrendProducts(response.docs);
+
             }catch(e){
                 console.log(e)
             }
@@ -23,7 +25,37 @@ function ProductCarousel() {
         responseProduct();
     }, []);
 
-    const moveXAxis = (value) => document.getElementById('trendItems').style.setProperty('--x-axis', value);
+    const setXAxisValues = () => {
+        const widthProperty = document.defaultView.getComputedStyle(document.getElementById('trendItems')).getPropertyValue("width");
+        let xAxis = {
+            limit: -50,
+            shift: 50
+        };
+
+        if(parseInt(widthProperty) > 2000)  xAxis = { limit: -80, shift: 20};
+
+        return xAxis;
+    }
+
+    const moveRight = () => {
+        let xAxis = setXAxisValues();
+        
+        if(xAxisProperty > xAxis.limit){
+            xAxisProperty = xAxisProperty - xAxis.shift;
+            
+            document.getElementById('trendItems').style.setProperty('--x-axis', `${xAxisProperty}%`);
+        }
+    };
+
+    const moveLeft = () => {
+        let xAxis = setXAxisValues();
+
+        if(xAxisProperty < 0){
+            xAxisProperty = xAxisProperty + xAxis.shift;
+            
+            document.getElementById('trendItems').style.setProperty('--x-axis', `${xAxisProperty}%`);
+        };
+    };
     
     return ( 
         <div className={styles.carousel}>
@@ -32,8 +64,8 @@ function ProductCarousel() {
                 <h2>Trending Products</h2>
 
                 <div className={styles.headerButtons}>
-                    <button onClick={() => moveXAxis("0%")}>{arrow1}</button>
-                    <button onClick={() => moveXAxis("-50%")}>{arrow2}</button>
+                    <button onClick={() => moveLeft()}>{arrow1}</button>
+                    <button onClick={() => moveRight()}>{arrow2}</button>
                 </div>
 
             </div>
