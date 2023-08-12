@@ -13,7 +13,7 @@ footer{
 .footerBody{
     display: flex;
     margin:auto;
-    width: 20%;
+    width: 400px;
     justify-content:space-evenly;
 }
 
