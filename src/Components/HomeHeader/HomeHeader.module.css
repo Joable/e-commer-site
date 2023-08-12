@@ -62,7 +62,6 @@
 @media (max-width: 1000px){
     /* headerImages */
     .headerImages{
-        display: grid;
         justify-content: center;
         grid-template-columns: repeat(2, 250px);
         grid-template-rows: repeat(2, 1fr);

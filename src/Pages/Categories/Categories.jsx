@@ -50,7 +50,9 @@ function Categories() {
     }
 
     const changeCategory = async (category) => {
+
         try{
+
             setIsLoading(true);
 
             setActiveCategory(category);
@@ -60,15 +62,20 @@ function Categories() {
             setProducts(response.docs);
 
             setIsLoading(false);
+
         }catch(e){
             console.log(e);
         };
     };
 
     const activateButton = (category) => {
+
         if(activeCategory === category){
+
             return styles.activeButton;
+
         }else{
+
             return styles.inactiveButton;
         };
     };
@@ -80,6 +87,7 @@ function Categories() {
         </div>
 
         <div className={styles.categoriesBody}>
+            
             <div className={styles.categoriesButtons}>
 
                 {categories.map((category) => 
@@ -96,6 +104,7 @@ function Categories() {
             <div className={styles.categoriesProducts}>
                 {displayProducts()}
             </div>
+
         </div>
         </> 
     );
