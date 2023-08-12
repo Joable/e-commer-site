@@ -1,7 +1,9 @@
 /* productDescription */
 .description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 40%;
-    margin-top: 10%;
 }
 
 .description p{
