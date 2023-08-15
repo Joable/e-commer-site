@@ -38,5 +38,6 @@ nav{
 @media (max-width:1000px){
     .navContainer{
         width: auto;
+        margin: 0 10px;
     }
 }
