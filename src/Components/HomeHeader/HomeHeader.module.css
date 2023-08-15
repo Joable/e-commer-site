@@ -15,6 +15,11 @@
     height: 100%;
     margin: 0;
 }
+
+.headerImages img{
+    width: 100%;
+}
+
 .headerImages h3{
     margin: 0;
     position: absolute;
@@ -65,13 +70,17 @@
         justify-content: center;
         grid-template-columns: repeat(2, 250px);
         grid-template-rows: repeat(2, 1fr);
-        grid-gap: 10px;
     }
     /* furniture clothes peripherals electronics */
     .furniture, .clothes, .peripherals, .electronics{
         grid-column: auto;
         grid-row: auto;
     }
+}
 
-    
+@media (max-width: 500px){
+    .headerImages{
+        grid-template-columns: repeat(1, 190px);
+        grid-template-rows: repeat(4, 95px);
+    }
 }

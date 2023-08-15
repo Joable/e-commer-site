@@ -3,3 +3,8 @@
     height: 50vh;
 }
 
+@media (max-width: 500px){
+    .homeHeader{
+        height: 400px;
+    }
+}
