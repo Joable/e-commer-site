@@ -44,6 +44,10 @@
     margin: 10px 0;
 }
 
+.textBody a{
+    width: 100px;
+}
+
 .textBody button{
     width: 100px;
     height: 30px;
@@ -90,5 +94,40 @@
     .textBody{
         justify-content: start;
         width: 100%;
+    }
+}
+
+@media (max-width: 500px){
+    /* separatorImage */
+    .separatorImage{
+        display:flex;
+        justify-content: center;
+        margin: 0;
+        width: 100%;
+        height: 175px;
+        overflow: hidden;
+    }
+
+    .separatorImage img{
+        max-width: none;
+        width: 350px;
+        height: 175px;
+    }
+    /* textContainer */
+    .textContainer{
+        margin-top: 0;
+        justify-content: center;
+    }
+
+    /* textBody */
+    .textBody{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+    }
+    .textBody p{
+        text-align: justify;
+        text-justify: inter-word;
     }
 }
