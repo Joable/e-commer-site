@@ -7,8 +7,13 @@
     border: var(--border-gray);
 }
 
-.item img{
-    width: 30%;
+/* itemImage */
+.itemImage{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
     padding: 10px;
     border-right: var(--border-gray);
 }
@@ -18,7 +23,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
+    width: 325px;
     padding: 15px;
 }
 
