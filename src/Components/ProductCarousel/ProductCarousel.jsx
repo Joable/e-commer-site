@@ -26,13 +26,17 @@ function ProductCarousel() {
     }, []);
 
     const setXAxisValues = () => {
-        const widthProperty = document.defaultView.getComputedStyle(document.getElementById('trendItems')).getPropertyValue("width");
+        const widthProperty = document.defaultView.getComputedStyle(document.getElementById('root')).getPropertyValue("width");
         let xAxis = {
             limit: -50,
             shift: 50
         };
 
-        if(parseInt(widthProperty) > 2000)  xAxis = { limit: -80, shift: 20};
+        if(parseInt(widthProperty) < 1000 && parseInt(widthProperty) > 500){
+            xAxis = { limit: -80, shift: 20};
+        }else if(parseInt(widthProperty) < 500){
+            xAxis = { limit: -90, shift: 10 };
+        };
 
         return xAxis;
     }
