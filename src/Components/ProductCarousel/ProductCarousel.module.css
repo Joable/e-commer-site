@@ -53,6 +53,10 @@
 
 
 @media (max-width:1000px){
+    /* trendHeader */
+    .trendHeader{
+        width: 500px;
+    }
     /* trendBody */
     .trendBody{
         width: 500px;
@@ -61,8 +65,19 @@
     .trendItems{
         width: 500%;
     }
+}
+
+@media (max-width: 500px){
     /* trendHeader */
     .trendHeader{
-        width: 500px;
+        width: 200px;
+    }
+    /* trendBody */
+    .trendBody{
+        width: 200px;
+    }
+    /* trendItems */
+    .trendItems{
+        width: 1000%;
     }
 }
