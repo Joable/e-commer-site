@@ -78,6 +78,7 @@
     }
     /* trendItems */
     .trendItems{
+        grid-gap: 0px;
         width: 1000%;
     }
 }
