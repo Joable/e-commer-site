@@ -38,6 +38,8 @@
 
 /* trendBody */
 .trendBody{
+    width: 1000px;
+    height: 310px;
     overflow: hidden;
 }
 
@@ -45,9 +47,9 @@
 .trendItems{
     --x-axis : 0%;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 195px);
     grid-gap: 5px;
-    width: 200%;
+    width: 2000px;
     transform: translateX(var(--x-axis));
 }
 
@@ -63,6 +65,7 @@
     }
     /* trendItems */
     .trendItems{
+        grid-template-columns: repeat(10, 245px);
         width: 500%;
     }
 }
@@ -78,7 +81,8 @@
     }
     /* trendItems */
     .trendItems{
-        grid-gap: 0px;
+        grid-template-columns: repeat(10, 200px);
+        gap: 0px;
         width: 1000%;
     }
 }
