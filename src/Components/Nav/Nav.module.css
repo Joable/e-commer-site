@@ -37,7 +37,8 @@ nav{
 
 @media (max-width:1000px){
     .navContainer{
-        width: auto;
-        margin: 0 10px;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 10px;
     }
 }
