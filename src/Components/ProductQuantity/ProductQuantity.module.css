@@ -36,3 +36,9 @@
     justify-content: center;
     align-content: center;
 }
+
+@media (max-width: 500px){
+    .count{
+        width: 100px;
+    }
+}

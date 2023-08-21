@@ -48,7 +48,6 @@
 
     /* productBody */
     .productBody{
-        display: flex;
         flex-direction: column;
         align-items: center;
         width: 500px;
@@ -58,5 +57,11 @@
     .detailsSection{
         width: 500px;
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:500px) {
+    .productBody{
+        width: 200px;
     }
 }
