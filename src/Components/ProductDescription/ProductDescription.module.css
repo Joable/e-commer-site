@@ -65,4 +65,16 @@
         display: grid;
         grid-template-columns: 100px 100px;
     }
+
+    .productButtons{
+        flex-direction: column;
+    }
+
+    .productButtons button{
+        width: 100%;
+    }
+
+    .redButton{
+        margin-top: 10px;
+    }
 }
