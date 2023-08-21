@@ -38,3 +38,30 @@ footer{
     text-align: center;
     text-decoration: none;
 }
+
+@media (max-width: 500px) {
+    .footerBody{
+        width: 250px;
+    }
+}
+
+@media (max-width: 250px) {
+    footer{
+        height: 200px;
+    }
+
+    .footerBody{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+    }
+
+    .footerBody a{
+        margin-bottom: 10px;
+    }
+
+    .footerBody a:first-child{
+        margin-top: 10px;
+    }
+}
