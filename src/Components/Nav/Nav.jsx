@@ -6,10 +6,22 @@ import Cart from '../Cart/Cart';
 
 
 function Nav() {
+    let prevScrollPos = window.pageYOffset;
+
+    const hideNav = () => {
+        var currentScrollPos = window.pageYOffset;
+        
+        if (prevScrollPos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-121px";
+        }
+        prevScrollPos = currentScrollPos;
+    } 
 
     return ( 
         <>
-        <nav>
+        <nav id='navbar' onScroll={hideNav}>
             <div className={styles.navContainer}>
                 <Link className={styles.navLogo} to='/'>
                     <h1>Logo</h1>
