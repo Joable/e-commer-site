@@ -61,11 +61,13 @@
 }
 
 @media (max-width: 500px){
+    /* productPrice */
     .productPrice{
         display: grid;
         grid-template-columns: 100px 100px;
     }
 
+    /* productButtons */
     .productButtons{
         flex-direction: column;
     }
@@ -74,6 +76,7 @@
         width: 100%;
     }
 
+    /* redButton */
     .redButton{
         margin-top: 10px;
     }
