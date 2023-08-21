@@ -64,4 +64,9 @@
     .productBody{
         width: 200px;
     }
+
+    .detailsSection{
+        justify-content: center;
+        grid-template-columns: 200px;
+    }
 }
