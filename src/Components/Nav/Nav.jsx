@@ -8,7 +8,7 @@ import Cart from '../Cart/Cart';
 function Nav() {
     let prevScrollPos = window.pageYOffset;
 
-    const hideNav = () => {
+    window.onscroll = () => {
         var currentScrollPos = window.pageYOffset;
         
         if (prevScrollPos > currentScrollPos) {
@@ -21,7 +21,7 @@ function Nav() {
 
     return ( 
         <>
-        <nav id='navbar' onScroll={hideNav}>
+        <nav id='navbar'>
             <div className={styles.navContainer}>
                 <Link className={styles.navLogo} to='/'>
                     <h1>Logo</h1>
