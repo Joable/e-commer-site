@@ -12,6 +12,7 @@
 
 /* cartContent */
 .cartContent{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -24,6 +25,7 @@
 
 /* cartHeader */
 .cartHeader{
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     padding: 0 10px 0 10px;
@@ -44,6 +46,7 @@
 
 /* cartBody */
 .cartBody{
+    box-sizing: border-box;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 100%;
@@ -98,7 +101,13 @@
 
 
 @media (max-width: 500px) {
+    /* cartContent */
     .cartContent{
-        width: 200px;
+        width: 170px;
+    }
+
+    /* cartFooter */
+    .cartFooter button{
+        width: 100px;
     }
 }
