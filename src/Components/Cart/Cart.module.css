@@ -89,9 +89,16 @@
 
 .cartFooter button:hover{
     cursor: pointer;
-    background-color: rgb(225, 225, 225);
+    background-color: var(--white-hover);
 }
 
 .cartFooter button:active{
-    background-color: rgb(200, 200, 200);
+    background-color: var(--white-active);
+}
+
+
+@media (max-width: 500px) {
+    .cartContent{
+        width: 200px;
+    }
 }
