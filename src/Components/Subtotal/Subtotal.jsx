@@ -1,10 +1,6 @@
 import styles from './Subtotal.module.css';
 
-import { 
-    useState,
-    useContext,
-    useEffect
-} from 'react';
+import { useContext } from 'react';
 
 import { CartContext } from '../../Context/CartContext';
 
