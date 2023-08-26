@@ -2,14 +2,15 @@ import styles from './CategorySelector.module.css';
 
 import { useState } from 'react';
 
-export default function CategorySelector(){
-    const categories = ['all', 'furniture', 'kitchen', 'lamps', 'clothes', 'electronics', 'peripherals'];
+import { getProducts } from '../../Services/getProducts';
+
+export default function CategorySelector({category, setIsLoading, setProducts}){
     const [activeCategory, setActiveCategory] = useState(category);
-    
+    const categories = ['all', 'furniture', 'kitchen', 'lamps', 'clothes', 'electronics', 'peripherals'];
+
     const changeCategory = async (category) => {
         
-        try{
-            
+        try{            
             setIsLoading(true);
             
             setActiveCategory(category);
@@ -42,17 +43,19 @@ export default function CategorySelector(){
     }
 
     return(
+
         <div className={styles.categoriesButtons}>
 
-                {categories.map((category) => 
-                <button 
-                className={activateButton(category)} 
-                onClick={()=> changeCategory(category)}
-                >
-                    {capitalizeFirstLetter(category)}
-                </button>
-                )}
+            {categories.map((category) => 
+            <button 
+            className={activateButton(category)} 
+            onClick={()=> changeCategory(category)}
+            >
+                {capitalizeFirstLetter(category)}
+            </button>
+            )}
 
-            </div>
+        </div>
     );
+    
 }

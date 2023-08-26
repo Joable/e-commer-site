@@ -53,7 +53,7 @@ function Categories() {
 
         <div className={styles.categoriesBody}>
             
-            <CategorySelector/>
+            <CategorySelector category={category} setIsLoading={setIsLoading} setProducts={setProducts}/>
 
             <div className={styles.categoriesProducts}>
                 {displayProducts()}
