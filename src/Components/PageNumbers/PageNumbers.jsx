@@ -1,4 +1,4 @@
-export default function PageNumbers({productsPerPage, totalProducts}){
+export default function PageNumbers({productsPerPage, totalProducts, paginate}){
     const pageNumbers = [];
 
     for(let i = 1; i <= Math.ceil(totalProducts/ productsPerPage); i++){
@@ -9,9 +9,9 @@ export default function PageNumbers({productsPerPage, totalProducts}){
         <ul>
             {pageNumbers.map(number => (
                 <li key={number}>
-                    <a href="#">
+                    <button onClick={() => paginate(number)}>
                         {number}
-                    </a>
+                    </button>
                 </li>
             ))}
         </ul>
