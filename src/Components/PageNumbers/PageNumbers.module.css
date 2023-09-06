@@ -1,0 +1,24 @@
+.numbers{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+}
+
+.numberButton{
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    font-size: 15px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.numberButton:hover{
+    cursor: pointer;
+    background-color: var(--white-hover);
+}
+
+.numberButton:active{
+    background-color: var(--white-active);
+}
