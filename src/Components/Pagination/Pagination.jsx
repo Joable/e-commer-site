@@ -20,10 +20,13 @@ export default function Pagination({products}){
     const paginate = (pageNumber) => setCurrentPage(pageNumber); 
 
     return(
-        <>
-        {displayProducts(currentProducts)}
+        <div className={styles.pagination}>
+
+            <div className={styles.categoriesProducts}>
+                {displayProducts(currentProducts)}
+            </div>
 
         <PageNumbers totalProducts={products.length} productsPerPage={productsPerPage} paginate={paginate}/>
-        </>
+        </div>
     );
 }
