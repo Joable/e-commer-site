@@ -3,10 +3,10 @@ import styles from './Categories.module.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import ProductItem from '../../Components/ProductItem/ProductItem';
 import CategorySelector from '../../Components/CategorySelector/CategorySelector';
 
 import { getProducts } from '../../Services/getProducts';
+import Pagination from '../../Components/Pagination/Pagination';
 
 
 function Categories() {
@@ -39,7 +39,7 @@ function Categories() {
             );
         }else{
             return(
-            products.map((element) => <ProductItem id={element.id} productData={element.data()}/>)
+            <Pagination products={products}/>
             )
         }
     }
