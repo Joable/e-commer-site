@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import styles from './PageNumbers.module.css';
 
 export default function PageNumbers({productsPerPage, totalProducts, paginate}){
+    const [activeNumber, setActiveNumber] = useState(1);
     const pageNumbers = [];
 
     for(let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++){
@@ -11,7 +13,11 @@ export default function PageNumbers({productsPerPage, totalProducts, paginate}){
         <ul className={styles.numbers}>
             {pageNumbers.map(number => (
                 <li key={number}>
-                    <button className={styles.numberButton} onClick={() => paginate(number)}>
+                    <button className={(activeNumber === number) ? styles.activeNumber: styles.numberButton} 
+                    onClick={() => {
+                        paginate(number)
+                        setActiveNumber(number)
+                        }}>
                         {number}
                     </button>
                 </li>

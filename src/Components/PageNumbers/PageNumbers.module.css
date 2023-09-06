@@ -1,6 +1,7 @@
 .numbers{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     list-style: none;
     padding: 0;
 }
@@ -21,4 +22,12 @@
 
 .numberButton:active{
     background-color: var(--white-active);
+}
+
+.activeNumber{width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    font-size: 15px;
+    background-color: var(--white-active);
+    border: 2px solid black;
 }
