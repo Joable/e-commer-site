@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 import CategorySelector from '../../Components/CategorySelector/CategorySelector';
 
 import { getProducts } from '../../Services/getProducts';
+
+import LoadingProductItem from '../../Components/ProductItem/LoadingProductItem';
 import Pagination from '../../Components/Pagination/Pagination';
 
 
@@ -31,15 +33,15 @@ function Categories() {
     }, []);
 
     const displayProducts = () =>{
+        const iterator = [...Array(10).keys()];
+
         if(isLoading){
             return(
-                <>
-                    Loading...
-                </>
+                iterator.map(() => <LoadingProductItem/>)
             );
         }else{
             return(
-            <Pagination products={products}/>
+                <Pagination products={products}/>
             )
         }
     }
