@@ -11,7 +11,7 @@ export default function LoadingProductItem(){
             </div>
 
             <div className={styles.itemBody}>
-                <h4>Loading..</h4>
+                <h4>Loading...</h4>
             </div>
         </div>
     );

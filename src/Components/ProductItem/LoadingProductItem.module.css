@@ -1,3 +1,4 @@
+/* item */
 .item{
     box-sizing: border-box;
     display: flex;
@@ -9,8 +10,23 @@
     overflow: hidden;
 }
 
+.item:hover{
+    cursor: wait;
+}
+
+
+/* itemSpinner */
 .itemSpinner{
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 210px;
     border-bottom: var(--border-gray);
+}
+
+/* itemBody */
+.itemBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
