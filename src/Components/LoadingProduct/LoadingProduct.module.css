@@ -44,3 +44,34 @@
     align-items: center;
     background-color: aliceblue;
 }
+
+@media (max-width:1000px) {
+    .loadingBody{
+        flex-direction: column;
+        justify-content: center;
+        width: auto;
+        max-width: 1000px;
+        gap: 10px;
+
+    }
+
+    .element{
+        width: 250px;
+        height: 250px;
+        max-width: 1000px;
+    }
+
+    .details{
+        grid-template-columns: 200px;
+        grid-template-rows: repeat(3, auto);
+        grid-gap: 10px;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .detail{
+        height: 100px;
+    }
+    
+}
