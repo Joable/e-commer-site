@@ -10,11 +10,12 @@ import { CartContext } from '../../Context/CartContext';
 
 import CartItem from '../CartItem/CartItem';
 import Subtotal from '../Subtotal/Subtotal';
+import Spinner from '../Spinner/Spinner';
 
 
 export default function Cart() {
     const [cartModal, setCartModal] = useState("");
-    
+    const [isLoading, setIsLoading] = useState(true);
     const {cartProducts, setCartProducts} = useContext(CartContext);
 
     useEffect(() => setCartModal(document.getElementById('modal')), []);
@@ -38,14 +39,23 @@ export default function Cart() {
     const displayCartItems = () => {
         let productsArray = [];
 
-        Object.keys(cartProducts).forEach((key) => productsArray.push(
-            <CartItem 
-            id={key} 
-            product={cartProducts[key]}
-            />
-        ));
-
-        return productsArray;
+        if(cartProducts.length < 1){
+            return(
+                <div className={styles.loading}>
+                    <Spinner/>
+                    <h2>Loading...</h2>
+                </div>
+            );
+        }else{    
+            Object.keys(cartProducts).forEach((key) => productsArray.push(
+                <CartItem 
+                id={key} 
+                product={cartProducts[key]}
+                />
+                ));
+                
+                return productsArray;
+        }
     };
 
     return (

@@ -99,6 +99,14 @@
     background-color: var(--white-active);
 }
 
+.loading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 
 @media (max-width: 500px) {
     /* cartContent */
