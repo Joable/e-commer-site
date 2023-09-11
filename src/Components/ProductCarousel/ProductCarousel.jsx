@@ -4,9 +4,11 @@ import styles from './ProductCarousel.module.css'
 import { useEffect, useState } from 'react';
 
 import { getTrendProducts } from '../../Services/getProducts'
+import LoadingProductItem from '../ProductItem/LoadingProductItem';
 
 function ProductCarousel() {
     const [trendProducts, setTrendProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
     let xAxisProperty = 0;
     const arrow1 = "<--", arrow2 = "-->";
 
@@ -16,6 +18,8 @@ function ProductCarousel() {
                 const response = await getTrendProducts();
 
                 setTrendProducts(response.docs);
+
+                setIsLoading(false);
 
             }catch(e){
                 console.log(e)
@@ -60,6 +64,20 @@ function ProductCarousel() {
             document.getElementById('trendItems').style.setProperty('--x-axis', `${xAxisProperty}%`);
         };
     };
+
+    const displayItems = () => {
+        const iterator = [...Array(10).keys()];
+
+        if (isLoading){
+            return(
+                iterator.map(() => <LoadingProductItem/>)
+            );
+        } else{
+            return(
+                trendProducts.map((element) => <ProductItem id={element.id} productData={element.data()}/>)
+            )
+        }
+    }
     
     return ( 
         <div className={styles.carousel}>
@@ -77,7 +95,7 @@ function ProductCarousel() {
             <div className={styles.trendBody}>
 
                 <div id='trendItems' className={styles.trendItems}>
-                    {trendProducts.map((element) => <ProductItem id={element.id} productData={element.data()}/>)}
+                    {displayItems()}
                 </div>
 
             </div>
