@@ -33,11 +33,13 @@ function Categories() {
     }, []);
 
     const displayProducts = () =>{
-        const iterator = [...Array(10).keys()];
+        const iterator = [...Array(4).keys()];
 
         if(isLoading){
             return(
-                iterator.map(() => <LoadingProductItem/>)
+                <div className={styles.loadingItems}>
+                    {iterator.map(() => <LoadingProductItem/>)}
+                </div>
             );
         }else{
             return(
