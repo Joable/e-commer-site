@@ -19,7 +19,7 @@ function ProductCarousel() {
 
                 setTrendProducts(response.docs);
 
-                //setIsLoading(false);
+                setIsLoading(false);
 
             }catch(e){
                 console.log(e)
