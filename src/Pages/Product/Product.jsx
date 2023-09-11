@@ -11,6 +11,7 @@ import { getProductById } from '../../Services/getProducts';
 import ProductCarousel from '../../Components/ProductCarousel/ProductCarousel';
 import ImageSelector from '../../Components/ImageSelector/ImageSelector';
 import ProductDescription from '../../Components/ProductDescription/ProductDescription';
+import LoadingProduct from '../../Components/LoadingProduct/LoadingProduct';
 
 function Product() {
     const [product, setProduct] = useState({
@@ -39,9 +40,9 @@ function Product() {
 
     if(isLoading){
         return(
-        <>
-            Loading...
-        </>
+            <>
+                <LoadingProduct/>
+            </>
         );
     }else{
         return (
