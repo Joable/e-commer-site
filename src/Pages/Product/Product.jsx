@@ -29,7 +29,7 @@ function Product() {
 
                 setProduct(response.data());
                 
-                setIsLoading(false);
+                //setIsLoading(false);
             }catch(e){
                 console.log(e)
             }
@@ -38,16 +38,17 @@ function Product() {
         responseProduct();
     }, []);
 
-    if(isLoading){
-        return(
-            <>
-                <LoadingProduct/>
-            </>
-        );
-    }else{
-        return (
-            <div className={styles.product}>
 
+    const displayProduct = () => {
+        if(isLoading){
+            return(
+                <>
+                <LoadingProduct/>
+                </>
+            );
+        }else{
+            return(
+                <>
                 <h2 className={styles.productTitle}>{product.name}</h2>
         
                 <div className={styles.productBody}>
@@ -60,14 +61,21 @@ function Product() {
                 <div className={styles.detailsSection}>
                     {product.details.map((detail) => <div className={styles.productDetails}><h3>{detail.name}</h3> <h4>{detail.description}</h4></div>)}
                 </div>
-        
+                </>
+            );
+        };
+    }
+        return (
+            <div className={styles.product}>
+
+                {displayProduct()}
+
                 <div className={styles.trend}>
                     <ProductCarousel/>
                 </div>
 
             </div> 
         );
-    }
 }
 
 export default Product;
