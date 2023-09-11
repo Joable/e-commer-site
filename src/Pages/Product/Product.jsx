@@ -29,7 +29,7 @@ function Product() {
 
                 setProduct(response.data());
                 
-                //setIsLoading(false);
+                setIsLoading(false);
             }catch(e){
                 console.log(e)
             }
