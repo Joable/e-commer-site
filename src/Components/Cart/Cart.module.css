@@ -1,3 +1,14 @@
+/* cartButton */
+.cartButton{
+    width: 40px;
+    background-color: white;
+    border: 0;
+}
+
+.cartButton:hover{
+    cursor: pointer;
+}
+
 /* modal */
 .modal{
     display: none;
@@ -99,6 +110,8 @@
     background-color: var(--white-active);
 }
 
+
+/* loading */
 .loading{
     display: flex;
     flex-direction: column;
