@@ -1,4 +1,5 @@
 import styles from './Cart.module.css';
+import Logo from './Cart.svg';
 
 import { 
     useState, 
@@ -59,7 +60,7 @@ export default function Cart() {
 
     return (
         <>
-        <button onClick={handleOpen}>Cart</button>
+        <button onClick={handleOpen} className={styles.cartButton}><img src={Logo} alt="Cart"/></button>
 
         <div id='modal' className={styles.modal} >
 
