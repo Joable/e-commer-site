@@ -15,7 +15,6 @@ import Spinner from '../Spinner/Spinner';
 
 export default function Cart() {
     const [cartModal, setCartModal] = useState("");
-    const [isLoading, setIsLoading] = useState(true);
     const {cartProducts, setCartProducts} = useContext(CartContext);
 
     useEffect(() => setCartModal(document.getElementById('modal')), []);
