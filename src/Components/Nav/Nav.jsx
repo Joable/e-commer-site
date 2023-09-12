@@ -1,4 +1,5 @@
 import styles from './Nav.module.css';
+import Logo from './Logo.svg';
 
 import { Link } from 'react-router-dom'; 
 
@@ -24,7 +25,7 @@ function Nav() {
         <nav id='navbar'>
             <div className={styles.navContainer}>
                 <Link className={styles.navLogo} to='/'>
-                    <h1>Logo</h1>
+                    <img src={Logo} alt="E-Commerce Site Logo" />
                 </Link>
 
                 <div className={styles.navButtons}>

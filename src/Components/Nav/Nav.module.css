@@ -35,8 +35,9 @@ nav{
 
 /* navLogo */
 .navLogo{
-    text-decoration: none;
-    color: black;
+    width: 150px;
+    max-height: 52px;
+    margin: 5px;
 }
 
 @media (max-width:1000px){
@@ -47,7 +48,7 @@ nav{
     }
 }
 
-@media (max-width:310px) {
+@media (max-width:500px) {
     .navContainer{
         flex-direction: column;
         align-items: center;
@@ -55,13 +56,13 @@ nav{
 
     .navButtons{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         width: 100%;
         margin: 0 0 5px 0;
     }
 }
 
-@media (max-width:260px) {
+@media (max-width:275px) {
     .navButtons{
         flex-direction: column;
         align-items: center;
