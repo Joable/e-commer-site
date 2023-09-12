@@ -1,4 +1,5 @@
 import styles from './Footer.module.css';
+import Logo from './Logo.svg';
 
 import { Link } from 'react-router-dom'
 
@@ -17,9 +18,7 @@ function Footer() {
 
             <div className={styles.footerLogo}>
                 <Link className={styles.logo} to="/">
-                    <h2>
-                        Logo                    
-                    </h2>
+                    <img src={Logo} alt="E-Commerce Site Logo" />
                 </Link>
             </div>
         </footer>

@@ -33,9 +33,7 @@ footer{
 /* logo */
 .logo{
     justify-content: center;
-    color: white;
-    text-align: center;
-    text-decoration: none;
+    
 }
 
 @media (max-width: 500px) {
