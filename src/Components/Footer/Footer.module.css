@@ -32,8 +32,11 @@ footer{
 
 /* logo */
 .logo{
+    display: flex;
     justify-content: center;
-    
+    align-items: center;
+    max-width: 1000px;
+    max-height: 65px;
 }
 
 @media (max-width: 500px) {
