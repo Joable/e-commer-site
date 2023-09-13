@@ -1,16 +1,17 @@
-import ProductItem from '../ProductItem/ProductItem';
-import styles from './ProductCarousel.module.css'
+import styles from './ProductCarousel.module.css';
+import Right from './RightArrow.svg';
+import Left from './LeftArrow.svg';
 
 import { useEffect, useState } from 'react';
 
 import { getTrendProducts } from '../../Services/getProducts'
+import ProductItem from '../ProductItem/ProductItem';
 import LoadingProductItem from '../ProductItem/LoadingProductItem';
 
 function ProductCarousel() {
     const [trendProducts, setTrendProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
     let xAxisProperty = 0;
-    const arrow1 = "<--", arrow2 = "-->";
 
     useEffect(() => {
         const responseProduct = async () =>{
@@ -86,8 +87,8 @@ function ProductCarousel() {
                 <h2>Trending Products</h2>
 
                 <div className={styles.headerButtons}>
-                    <button onClick={() => moveLeft()}>{arrow1}</button>
-                    <button onClick={() => moveRight()}>{arrow2}</button>
+                    <button onClick={() => moveLeft()}> <img src={Left} alt="Left arrow"/> </button>
+                    <button onClick={() => moveRight()}> <img src={Right} alt="Right arrow"/> </button>
                 </div>
 
             </div>

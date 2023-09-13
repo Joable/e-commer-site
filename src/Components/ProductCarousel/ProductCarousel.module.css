@@ -22,10 +22,15 @@
 .headerButtons{
     display: flex;
     align-items: center;
+    width: 80px;
 }
 
 
 .headerButtons button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
     margin-right: 5px;
     color: black;
     background-color: white;
