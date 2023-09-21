@@ -11,7 +11,6 @@ import LoadingProductItem from '../ProductItem/LoadingProductItem';
 function ProductCarousel() {
     const [trendProducts, setTrendProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
-    let xAxisProperty = 0;
 
     useEffect(() => {
         const responseProduct = async () =>{
@@ -29,42 +28,6 @@ function ProductCarousel() {
 
         responseProduct();
     }, []);
-
-    const setXAxisValues = () => {
-        const widthProperty = document.defaultView.getComputedStyle(document.getElementById('root')).getPropertyValue("width");
-        let xAxis = {
-            limit: -50,
-            shift: 50
-        };
-
-        if(parseInt(widthProperty) < 1000 && parseInt(widthProperty) > 500){
-            xAxis = { limit: -80, shift: 20};
-        }else if(parseInt(widthProperty) < 500){
-            xAxis = { limit: -90, shift: 10 };
-        };
-
-        return xAxis;
-    }
-
-    const moveRight = () => {
-        let xAxis = setXAxisValues();
-        
-        if(xAxisProperty > xAxis.limit){
-            xAxisProperty = xAxisProperty - xAxis.shift;
-            
-            document.getElementById('trendItems').style.setProperty('--x-axis', `${xAxisProperty}%`);
-        }
-    };
-
-    const moveLeft = () => {
-        let xAxis = setXAxisValues();
-
-        if(xAxisProperty < 0){
-            xAxisProperty = xAxisProperty + xAxis.shift;
-            
-            document.getElementById('trendItems').style.setProperty('--x-axis', `${xAxisProperty}%`);
-        };
-    };
 
     const displayItems = () => {
         const iterator = [...Array(10).keys()];
@@ -85,12 +48,6 @@ function ProductCarousel() {
 
             <div className={styles.trendHeader}>
                 <h2>Trending Products</h2>
-
-                <div className={styles.headerButtons}>
-                    <button onClick={() => moveLeft()}> <img src={Left} alt="Left arrow"/> </button>
-                    <button onClick={() => moveRight()}> <img src={Right} alt="Right arrow"/> </button>
-                </div>
-
             </div>
 
             <div className={styles.trendBody}>
