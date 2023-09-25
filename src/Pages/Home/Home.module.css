@@ -15,3 +15,11 @@
     height: 100vh;
     max-height: 800px;
 }
+
+/* lampSeparator */
+.lampSeparator{
+    display: flex;
+    align-items: center;
+    height: 50vh;
+    max-height: 800px;
+}

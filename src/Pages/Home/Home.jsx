@@ -32,7 +32,9 @@ function Home() {
             <ProductCarousel/>
         </div>
         
-        <Separator parameters={lampsSeparator}/>
+        <div className={styles.lampSeparator}>
+            <Separator parameters={lampsSeparator}/>
+        </div>
         </>
     );
 }
