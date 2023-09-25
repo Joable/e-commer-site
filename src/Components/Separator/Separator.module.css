@@ -16,6 +16,7 @@
 /* separatorImage */
 .separatorImage{
     width: 50%;
+    height: 250px;
     object-fit: fill;
 }
 
@@ -83,7 +84,6 @@
         object-fit: none;
         width: 100%;
         max-width: 520px;
-        height: 50%;
     }
 
     /* textContainer */
@@ -105,15 +105,12 @@
         display:flex;
         justify-content: center;
         margin: 0;
-        width: 100%;
-        height: 175px;
         overflow: hidden;
     }
 
     .separatorImage img{
         min-width: 500px;
         max-width: 500px;
-        height: 175px;
     }
     /* textContainer */
     .textContainer{
