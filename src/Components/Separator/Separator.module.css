@@ -16,6 +16,7 @@
 /* separatorImage */
 .separatorImage{
     width: 50%;
+    object-fit: fill;
 }
 
 .separatorImage img{
@@ -79,7 +80,8 @@
 
     /* separatorImage */
     .separatorImage{
-        margin: auto;
+        object-fit: none;
+        width: 100%;
         max-width: 520px;
         height: 50%;
     }
@@ -109,9 +111,9 @@
     }
 
     .separatorImage img{
+        min-width: 500px;
         max-width: 500px;
         height: 175px;
-        object-fit: cover;
     }
     /* textContainer */
     .textContainer{
