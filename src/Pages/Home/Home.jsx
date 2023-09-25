@@ -24,9 +24,9 @@ function Home() {
         <>
         <div className={styles.homeHeader}>
             <HomeHeader/>
-        </div>
         
-        <Separator parameters={kitchenSeparator}/>
+            <Separator parameters={kitchenSeparator}/>
+        </div>
         
         <ProductCarousel/>
         

@@ -1,6 +1,10 @@
 /* homeHeader */
 .homeHeader{
-    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    max-height: 800px;
 }
 
 @media (max-width: 500px){
