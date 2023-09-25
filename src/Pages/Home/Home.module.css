@@ -8,8 +8,10 @@
     max-height: 800px;
 }
 
-@media (max-width: 500px){
-    .homeHeader{
-        height: 400px;
-    }
+/* productCarousel */
+.productCarousel{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    max-height: 800px;
 }
