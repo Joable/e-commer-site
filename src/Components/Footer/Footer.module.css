@@ -6,7 +6,7 @@ footer{
     bottom: 0;
     width: 100%;
     background-color: black;
-    height: 105px;
+    height: 150px;
 }
 
 /* footerBody */
@@ -20,7 +20,6 @@ footer{
 .footerBody a{
     text-decoration: none;
     color: white;
-    max-width: fit-content;
 }
 
 /* footerLogo */
@@ -28,6 +27,12 @@ footer{
     display: flex;
     justify-content: center;
     height: 70%;
+}
+
+.footerLogo a{
+    max-width: 235px;
+    margin-top: auto;
+    margin-bottom: 15px;
 }
 
 /* logo */
@@ -47,9 +52,10 @@ footer{
 
 @media (max-width: 300px) {
     footer{
-        height: 200px;
+        height: 250px;
     }
 
+    /* footerBody */
     .footerBody{
         flex-direction: column;
         justify-content: center;
@@ -63,5 +69,10 @@ footer{
 
     .footerBody a:first-child{
         margin-top: 10px;
+    }
+
+    /* footerLogo */
+    .footerLogo a{
+        margin-top: 20px;
     }
 }
