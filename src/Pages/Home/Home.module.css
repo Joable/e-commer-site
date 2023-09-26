@@ -1,3 +1,8 @@
+section{
+    height: 80vh;
+    max-height: 650px;
+}
+
 /* homeHeader */
 .homeHeader{
     display: flex;
@@ -12,8 +17,6 @@
 .productCarousel{
     display: flex;
     align-items: center;
-    height: 100vh;
-    max-height: 800px;
 }
 
 /* lampSeparator */
@@ -21,6 +24,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    max-height: 800px;
 }

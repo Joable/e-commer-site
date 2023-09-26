@@ -22,19 +22,19 @@ function Home() {
     
     return ( 
         <>
-        <div className={styles.homeHeader}>
+        <section className={styles.homeHeader}>
             <HomeHeader/>
         
             <Separator parameters={kitchenSeparator}/>
-        </div>
+        </section>
         
-        <div className={styles.productCarousel}>
+        <section className={styles.productCarousel}>
             <ProductCarousel/>
-        </div>
+        </section>
         
-        <div className={styles.lampSeparator}>
+        <section className={styles.lampSeparator}>
             <Separator parameters={lampsSeparator}/>
-        </div>
+        </section>
         </>
     );
 }
