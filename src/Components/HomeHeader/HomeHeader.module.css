@@ -20,6 +20,7 @@
     width: 100%;
 }
 
+
 .headerImages h3{
     margin: 0;
     position: absolute;
@@ -27,7 +28,6 @@
     font-size: 30px;
     bottom: 5px;
     left: 10px;
-
 }
 
 .headerImages a{
@@ -38,6 +38,11 @@
     overflow: hidden;
     max-width: 100%;
     max-height: 100%;
+}
+
+.headerImages a:hover{
+    transition: transform .5s;
+    transform: scale(0.95);
 }
 
 /* furniture */
