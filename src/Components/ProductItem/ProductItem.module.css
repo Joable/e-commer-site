@@ -18,20 +18,23 @@
 
 /* itemImage */
 .itemImage{
+    box-sizing: border-box;
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 210px;
+    padding: 5px;
     border-bottom: var(--border-gray);
 }
 
 .itemImage img{
-    width: 90%;
-    height: 90%;
-    margin: auto;
+    height: 100%;
 }
 
 /* Styles itemBody */
 
 .itemBody{
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 90px;
