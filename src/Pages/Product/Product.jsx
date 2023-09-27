@@ -49,16 +49,20 @@ function Product() {
         }else{
             return(
                 <>
-                <h2 className={styles.productTitle}>{product.name}</h2>
-        
-                <div className={styles.productBody}>
-                    <ImageSelector images={product.images}/>
-        
-                    <ProductDescription product={product} id={id}/>
-                </div>
+                <section className={styles.productSection}>
+
+                    <h2 className={styles.productTitle}>{product.name}</h2>
+            
+                    <div className={styles.productBody}>
+                        <ImageSelector images={product.images}/>
+            
+                        <ProductDescription product={product} id={id}/>
+                    </div>
+                
+                </section>
                 
         
-                <div className={styles.detailsSection}>
+                <div className={styles.detailsWrapper}>
                     {product.details.map((detail) => <div className={styles.productDetails}><h3>{detail.name}</h3> <h4>{detail.description}</h4></div>)}
                 </div>
                 </>
