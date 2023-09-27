@@ -17,11 +17,20 @@
     height: 630px;
 }
 
+/* details */
+.details{
+    display: flex;
+    align-items: center;
+    height: 50vh;
+    max-height: 350px;
+}
+
 /* detailsWrapper */
 .detailsWrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+    width: 100%;
     margin: 50px 0;
 }
 

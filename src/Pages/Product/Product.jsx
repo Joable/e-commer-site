@@ -61,10 +61,13 @@ function Product() {
                 
                 </section>
                 
-        
-                <div className={styles.detailsWrapper}>
-                    {product.details.map((detail) => <div className={styles.productDetails}><h3>{detail.name}</h3> <h4>{detail.description}</h4></div>)}
-                </div>
+                <section className={styles.details}>
+
+                    <div className={styles.detailsWrapper}>
+                        {product.details.map((detail) => <div className={styles.productDetails}><h3>{detail.name}</h3> <h4>{detail.description}</h4></div>)}
+                    </div>
+                
+                </section>
                 </>
             );
         };
