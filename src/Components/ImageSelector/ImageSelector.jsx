@@ -1,10 +1,14 @@
 import styles from './ImageSelector.module.css';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 export default function ImageSelector({ images }){
     const [displayImage, setDisplayImage] = useState(images[0]);
+
+    useEffect(() => {
+        setDisplayImage(images[0]);
+    }, [images])
 
     return(
         <div className={styles.productImages}>

@@ -22,22 +22,33 @@ function Product() {
     
     const {id} = useParams();
     
+    /* executes responseProduct on mount */
     useEffect(() => {
-        const responseProduct = async () =>{
-            try{
-                const response = await getProductById(id);
-
-                setProduct(response.data());
-                
-                setIsLoading(false);
-            }catch(e){
-                console.log(e)
-            }
-        };
-
         responseProduct();
     }, []);
 
+    /* executes responseProduct whe the id changes */
+    useEffect(() => {
+        setIsLoading(true)
+        
+        backToTop();
+
+        responseProduct();
+    }, [id]);
+
+    const backToTop = () => document.documentElement.scrollTop = 0;
+    
+    const responseProduct = async () =>{
+        try{
+            const response = await getProductById(id);
+
+            setProduct(response.data());
+            
+            setIsLoading(false);
+        }catch(e){
+            console.log(e)
+        }
+    };
 
     const displayProduct = () => {
         if(isLoading){
