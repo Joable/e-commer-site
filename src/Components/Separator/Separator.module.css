@@ -1,6 +1,7 @@
 /* separatorBody */
 .separatorBody{
     display: flex;
+    width: 1000px;
     height: 250px;
 }
 
@@ -8,6 +9,7 @@
 .bodyReverse{
     display: flex;
     flex-direction: row-reverse;
+    width: 1000px;
     height: 250px;
 }
 
