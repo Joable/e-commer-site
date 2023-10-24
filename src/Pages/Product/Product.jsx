@@ -41,6 +41,7 @@ function Product() {
         responseProduct();
     }, [id]);
 
+    /* gets the images urls when product changes */
     useEffect(() => {
         generateImagesUrls();
 
@@ -71,11 +72,10 @@ function Product() {
                 const response = await pathReference.getDownloadURL();
                 
                 urls.push(response);
-                
-                console.log(urls)
-            }
+            };
             
-            setImagesUrls(urls)
+            setImagesUrls(urls);
+
             setIsLoading(false);
         }
 
