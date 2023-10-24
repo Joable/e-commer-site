@@ -7,7 +7,7 @@ import PageNumbers from "../PageNumbers/PageNumbers";
 
 export default function Pagination({products}){
     const [currentPage, setCurrentPage] = useState(1);
-    const [productsPerPage] = useState(4);
+    const [productsPerPage] = useState(8);
 
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;

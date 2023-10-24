@@ -21,11 +21,13 @@ function ProductItem({id, productData}) {
             
             setImageUrl(response);
 
-            setIsLoading(false);
+            setTimeout(() => setIsLoading(false), 1500);
         }
 
+        setIsLoading(true);
+
         getUrl();
-    },[])
+    },[productData])
 
     const loadingImage = () => {
         if(isLoading){

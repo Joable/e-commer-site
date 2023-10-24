@@ -31,7 +31,7 @@ function Nav() {
                 <div className={styles.navButtons}>
                     <Link to='/categories/all'>Categories</Link>
 
-                    <Link to='/product/nQmNSwLXnb1JdqWn4kG5'>Product Page</Link>
+                    <Link to='/product/1s9b7PcLGhK4yiwsFvG5'>Product Page</Link>
 
                     <Cart/>
                 </div>
