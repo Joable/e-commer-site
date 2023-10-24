@@ -1,8 +1,5 @@
 import styles from './Product.module.css';
 
-import firebase from '../../Config/Firebase';
-import "firebase/compat/storage";
-
 import { useParams } from 'react-router-dom';
 import { 
     useEffect, 
@@ -22,9 +19,7 @@ function Product() {
         images:[]
     });
     const [isLoading, setIsLoading] = useState(true);
-    const [imagesUrls, setImagesUrls] = useState([""]);
 
-    const storage = firebase.storage();
     const {id} = useParams();
     
     /* executes responseProduct on mount */
@@ -40,14 +35,6 @@ function Product() {
 
         responseProduct();
     }, [id]);
-
-    /* gets the images urls when product changes */
-    useEffect(() => {
-        generateImagesUrls();
-
-    },[product])
-    
-    useEffect(() => console.log(imagesUrls), [imagesUrls])
     
     const backToTop = () => document.documentElement.scrollTop = 0;
     
@@ -56,32 +43,15 @@ function Product() {
             const response = await getProductById(id);
             
             setProduct(response.data());
+
+            setIsLoading(false);
             
         }catch(e){
             console.log(e)
         }
     };
     
-    const generateImagesUrls = () => {
-        let urls = [];
-        
-        const getUrls = async () =>{  
-            for (let i = 0 ; i < product.images.length ; i++){
-                const pathReference = storage.refFromURL(`${product.images[i]}`);
-                
-                const response = await pathReference.getDownloadURL();
-                
-                urls.push(response);
-            };
-            
-            setImagesUrls(urls);
-
-            setIsLoading(false);
-        }
-
-        getUrls();
-
-    }
+    
 
     const displayProduct = () => {
         if(isLoading){
@@ -98,7 +68,7 @@ function Product() {
                     <h2 className={styles.productTitle}>{product.name}</h2>
             
                     <div className={styles.productBody}>
-                        <ImageSelector images={imagesUrls}/>
+                        <ImageSelector images={product.images}/>
             
                         <ProductDescription product={product} id={id}/>
                     </div>

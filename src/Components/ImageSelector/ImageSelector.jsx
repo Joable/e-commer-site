@@ -1,30 +1,70 @@
 import styles from './ImageSelector.module.css';
 
+import firebase from '../../Config/Firebase';
+import "firebase/compat/storage";
+
 import { useEffect, useState } from 'react';
 
 
 export default function ImageSelector({ images }){
-    const [displayImage, setDisplayImage] = useState(images[0]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [imagesUrls, setImagesUrls] = useState([""]);
+    const [displayImage, setDisplayImage] = useState(imagesUrls[0]);
 
+    const storage = firebase.storage();
+
+    /* executes generateImagesUrls on mount */
     useEffect(() => {
-        setDisplayImage(images[0]);
-    }, [images])
+         generateImagesUrls();
+    }, []);
 
-    return(
-        <div className={styles.productImages}>
+    /* refreshes the displayImage state when images changes */
+    useEffect(() => {
+        setDisplayImage(imagesUrls[0]);
+    }, [imagesUrls])
 
-            <div className={styles.image}>
-                <img src={displayImage} alt="Product"/>
-            </div>
+    const generateImagesUrls = () => {
+        let urls = [];
         
-            <div className={styles.imageSelector}>
-                {images.map((image) => <img 
-                    onClick={() => setDisplayImage(image)} 
-                    src={image} 
-                    alt={"Product"}
-                />)}
-            </div>
+        const getUrls = async () =>{  
+            for (let i = 0 ; i < images.length ; i++){
+                const pathReference = storage.refFromURL(`${images[i]}`);
+                
+                const response = await pathReference.getDownloadURL();
+                
+                urls.push(response);
 
-        </div>
-    )
+                console.log(urls)
+            };
+            
+            setImagesUrls(urls);
+
+            setIsLoading(false);
+        }
+
+        getUrls();
+
+    }
+
+    if(isLoading){
+        return <>Loadinger</>
+    }else{
+        return(
+            <div className={styles.productImages}>
+
+                <div className={styles.image}>
+                    <img src={displayImage} alt="Product"/>
+                </div>
+            
+                <div className={styles.imageSelector}>
+                    {imagesUrls.map((image) => <img 
+                        onClick={() => setDisplayImage(image)} 
+                        src={image} 
+                        alt={"Product"}
+                    />)}
+                </div>
+
+            </div>
+        )
+    }
 }

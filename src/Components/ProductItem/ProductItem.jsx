@@ -31,8 +31,7 @@ function ProductItem({id, productData}) {
         if(isLoading){
             return <Spinner/>
         }else{
-            return <img src={imageUrl} alt="Product"/>
-
+            return <img src={imageUrl} alt={productData.name}/>
         };
     };
 
