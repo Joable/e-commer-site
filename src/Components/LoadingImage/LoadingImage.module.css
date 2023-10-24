@@ -1,0 +1,9 @@
+/* element */
+.element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 475px;
+    height: 630px;
+    background-color: aliceblue;
+}

@@ -5,6 +5,8 @@ import "firebase/compat/storage";
 
 import { useEffect, useState } from 'react';
 
+import LoadingImage from '../LoadingImage/LoadingImage';
+
 
 export default function ImageSelector({ images }){
     const [isLoading, setIsLoading] = useState(true);
@@ -39,7 +41,7 @@ export default function ImageSelector({ images }){
             
             setImagesUrls(urls);
 
-            setIsLoading(false);
+            //setIsLoading(false);
         }
 
         getUrls();
@@ -47,7 +49,7 @@ export default function ImageSelector({ images }){
     }
 
     if(isLoading){
-        return <>Loadinger</>
+        return <LoadingImage/>
     }else{
         return(
             <div className={styles.productImages}>
