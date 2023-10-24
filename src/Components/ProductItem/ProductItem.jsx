@@ -6,8 +6,11 @@ import "firebase/compat/storage";
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import Spinner from '../Spinner/Spinner';
+
 function ProductItem({id, productData}) {
     const [imageUrl, setImageUrl] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
     const storage = firebase.storage();
 
     useEffect(() => { 
@@ -17,16 +20,26 @@ function ProductItem({id, productData}) {
             const response = await pathReference.getDownloadURL();            
             
             setImageUrl(response);
+
+            setIsLoading(false);
         }
 
         getUrl();
     },[])
 
+    const loadingImage = () => {
+        if(isLoading){
+            return <Spinner/>
+        }else{
+            return <img src={imageUrl} alt="Product"/>
+
+        };
+    };
 
     return (  
         <Link className={styles.item} to={`/product/${id}`} replace>
             <div className={styles.itemImage}>
-                <img src={imageUrl} alt="Product"/>
+                {loadingImage()}
             </div>
 
             <div className={styles.itemBody}>
