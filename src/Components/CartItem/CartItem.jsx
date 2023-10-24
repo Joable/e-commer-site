@@ -10,9 +10,11 @@ import {
 
 import CartQuantity from '../CartQuantity/CartQuantity';
 import CartDelete from '../CartDelete/CartDelete';
+import Spinner from '../Spinner/Spinner';
 
 export default function CartItem({id, product}){
     const [imageUrl, setImageUrl] = useState("");
+    const [isLoading, setIsLoading] = useState(true)
     const storage = firebase.storage();
 
     useEffect(() => { 
@@ -22,17 +24,26 @@ export default function CartItem({id, product}){
             const response = await pathReference.getDownloadURL();            
             
             setImageUrl(response);
-        }
+
+            setIsLoading(false);
+        };
 
         getUrl();
     },[])
 
+    const loadingImage = () => {
+        if(isLoading){
+            return <Spinner/>
+        }else{
+            return <img src={imageUrl} alt={product.name} />
+        }
+    }
 
     return(
         <div className={styles.item}>
 
             <div className={styles.itemImage}>
-                <img src={imageUrl} alt={product.name} />
+                {loadingImage()}
             </div>
 
             <div className={styles.itemDetails}>
