@@ -59,11 +59,15 @@ export default function ImageSelector({ images }){
                 </div>
             
                 <div className={styles.imageSelector}>
-                    {imagesUrls.map((image) => <img 
-                        onClick={() => setDisplayImage(image)} 
-                        src={image} 
-                        alt={"Product"}
-                    />)}
+                    {imagesUrls.map((image) => 
+                    <div className={styles.selection}>
+                        <img 
+                            onClick={() => setDisplayImage(image)} 
+                            src={image} 
+                            alt={"Product"}
+                        />
+                    </div>
+                    )}
                 </div>
 
             </div>
