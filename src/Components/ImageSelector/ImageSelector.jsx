@@ -41,7 +41,7 @@ export default function ImageSelector({ images }){
             
             setImagesUrls(urls);
 
-            //setIsLoading(false);
+            setIsLoading(false);
         }
 
         getUrls();
