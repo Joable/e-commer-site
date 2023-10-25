@@ -58,9 +58,9 @@ function Categories() {
             
             <CategorySelector category={category} setIsLoading={setIsLoading} setProducts={setProducts}/>
 
-            <div className={styles.categoriesProducts}>
-                {displayProducts()}
-            </div>
+
+            {displayProducts()}
+
 
         </div>
         </> 

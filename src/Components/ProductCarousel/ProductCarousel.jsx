@@ -38,7 +38,7 @@ function ProductCarousel() {
             );
         } else{
             return(
-                trendProducts.map((element) => <ProductItem id={element.id} productData={element.data()} images={element.data().images}/>)
+                trendProducts.map((element) => <ProductItem id={element.id} productData={element.data()}/>)
             )
         }
     }

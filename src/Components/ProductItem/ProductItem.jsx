@@ -8,17 +8,14 @@ import { useEffect, useState } from 'react';
 
 import Spinner from '../Spinner/Spinner';
 
-function ProductItem({id, productData, images}) {
+function ProductItem({id, productData}) {
     const [imageUrl, setImageUrl] = useState("");
     const [gsUrl, setGsUrl] = useState(productData.images[0]);
     const [isLoading, setIsLoading] = useState(true);
     const storage = firebase.storage();
 
     // refreshes the gs url when the product changes 
-    useEffect(() => {
-        setGsUrl(productData.images[0])
-        
-    }, [productData])
+    useEffect(() => setGsUrl(productData.images[0]), [productData])
 
     // changes the gs url to an image url
 
@@ -31,7 +28,7 @@ function ProductItem({id, productData, images}) {
             setImageUrl(response);
 
             setTimeout(() => setIsLoading(false), 1500);
-        }
+        };
 
         setIsLoading(true);
 
