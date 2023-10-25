@@ -32,6 +32,8 @@ function Categories() {
         responseProducts();
     }, []);
 
+    
+
     const displayProducts = () =>{
         const iterator = [...Array(4).keys()];
 

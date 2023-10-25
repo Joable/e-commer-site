@@ -24,8 +24,9 @@ export default function CartQuantity({id}){
             }
         });
 
-        setProductQuantity(id, countQuantity + 1);
+       setProductQuantity(id, countQuantity + 1);
     };
+
     const subtract = () => {
         if(countQuantity > 1) {
             setCartProducts({

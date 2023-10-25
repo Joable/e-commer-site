@@ -51,6 +51,7 @@ export default function Cart() {
                 <CartItem 
                 id={key} 
                 product={cartProducts[key]}
+                image={cartProducts[key].image}
                 />
                 ));
                 

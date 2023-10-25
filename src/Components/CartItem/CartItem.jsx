@@ -12,14 +12,14 @@ import CartQuantity from '../CartQuantity/CartQuantity';
 import CartDelete from '../CartDelete/CartDelete';
 import Spinner from '../Spinner/Spinner';
 
-export default function CartItem({id, product}){
+export default function CartItem({id, product, image}){
     const [imageUrl, setImageUrl] = useState("");
     const [isLoading, setIsLoading] = useState(true)
     const storage = firebase.storage();
 
     useEffect(() => { 
         const getUrl = async () =>{  
-            const pathReference = storage.refFromURL(`${product.image}`);
+            const pathReference = storage.refFromURL(`${image}`);
                 
             const response = await pathReference.getDownloadURL();            
             
@@ -28,8 +28,10 @@ export default function CartItem({id, product}){
             setIsLoading(false);
         };
 
+        setIsLoading(true);
+
         getUrl();
-    },[])
+    },[image])
 
     const loadingImage = () => {
         if(isLoading){
