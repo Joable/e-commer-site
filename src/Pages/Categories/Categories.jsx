@@ -3,10 +3,9 @@ import styles from './Categories.module.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import CategorySelector from '../../Components/CategorySelector/CategorySelector';
-
 import { getProducts } from '../../Services/getProducts';
 
+import CategorySelector from '../../Components/CategorySelector/CategorySelector';
 import LoadingProductItem from '../../Components/ProductItem/LoadingProductItem';
 import Pagination from '../../Components/Pagination/Pagination';
 
@@ -31,8 +30,6 @@ function Categories() {
 
         responseProducts();
     }, []);
-
-    
 
     const displayProducts = () =>{
         const iterator = [...Array(4).keys()];

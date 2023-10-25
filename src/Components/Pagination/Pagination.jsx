@@ -14,7 +14,7 @@ export default function Pagination({products}){
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
     const displayProducts = (productsToDisplay) => {
-        return productsToDisplay.map((product) => <ProductItem id={product.id} productData={product.data()}/>)
+        return productsToDisplay.map((product) => <ProductItem id={product.id} productData={product.data()} images={product.data().images}/>)
     };
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber); 

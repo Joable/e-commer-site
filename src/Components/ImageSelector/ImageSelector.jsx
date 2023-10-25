@@ -36,7 +36,6 @@ export default function ImageSelector({ images }){
                 
                 urls.push(response);
 
-                console.log(urls)
             };
             
             setImagesUrls(urls);
