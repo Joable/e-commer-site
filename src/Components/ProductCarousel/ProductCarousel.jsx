@@ -12,8 +12,8 @@ import ProductItem from '../ProductItem/ProductItem';
 import LoadingProductItem from '../ProductItem/LoadingProductItem';
 
 function ProductCarousel() {
-    const [trendItemsStyles, setTrendItemsStyles] = useState("");
-    const [trendBodyStyles, setTrendBodyStyles] = useState("");
+    const [trendItems, setTrendItems] = useState("");
+    const [trendBody, setTrendBody] = useState("");
     const [trendProducts, setTrendProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
@@ -31,20 +31,12 @@ function ProductCarousel() {
             }
         };
 
-        setTrendBodyStyles(document.defaultView.getComputedStyle(document.getElementById('trendBody')));
-        setTrendItemsStyles(document.defaultView.getComputedStyle(document.getElementById('trendItems')));
+        setTrendBody(document.getElementById('trendBody'));
+        setTrendItems(document.getElementById('trendItems'));
 
         responseProduct();
     }, []);
 
-    
-    useEffect(() => {
-        if(trendItemsStyles !== ""){
-            console.log(trendItemsStyles.getPropertyValue("width"));
-            console.log(trendBodyStyles.getPropertyValue("width"))
-
-        }
-    },[trendItemsStyles, trendBodyStyles])
 
     const displayItems = () => {
         const iterator = [...Array(10).keys()];
@@ -60,14 +52,26 @@ function ProductCarousel() {
         }
     }
     
-    const shift = () => {
-        const trendItemsLenght = Number.parseFloat(trendItemsStyles.getPropertyValue("width"));
-        const half = trendItemsLenght/2;
-        
-        document.getElementById('trendItems').style.width = `-${half}`
+    const shiftR = () => {
+        const trendItemsStyles = document.defaultView.getComputedStyle(trendItems);
+        const trendBodyStyles = document.defaultView.getComputedStyle(trendBody);
+        const width = (Number.parseFloat(trendItemsStyles.getPropertyValue("width")))/2
 
-        console.log(document.getElementById('trendItems').style.width)
+        trendItems.style.setProperty("--x-axis", `-${width + 25}px`)
+
+        console.log(trendItemsStyles.getPropertyValue("--x-axis"));
     }
+
+    const shiftL = () => {
+        const trendItemsStyles = document.defaultView.getComputedStyle(trendItems);
+        const trendBodyStyles = document.defaultView.getComputedStyle(trendBody);
+        const width = (Number.parseFloat(trendItemsStyles.getPropertyValue("width")))/2
+
+        trendItems.style.setProperty("--x-axis", `0px`)
+
+        console.log(trendItemsStyles.getPropertyValue("--x-axis"));
+    }
+
 
     return ( 
         <div className={styles.carousel}>
@@ -78,7 +82,7 @@ function ProductCarousel() {
 
 
             <div className={styles.trendWrapper}>
-                <button className={styles.trendButtons}><img src={Left} alt="" /></button>
+                <button className={styles.trendButtons} onClick={shiftL}><img src={Left} alt="" /></button>
 
                 <div id='trendBody' className={styles.trendBody}>
 
@@ -88,7 +92,7 @@ function ProductCarousel() {
 
                 </div>
 
-                <button className={styles.trendButtons} onClick={shift}><img src={Right} alt="" /></button>
+                <button className={styles.trendButtons} onClick={shiftR}><img src={Right} alt="" /></button>
             </div>
 
 

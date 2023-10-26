@@ -59,7 +59,7 @@
 
 /* trendItems */
 .trendItems{
-    --x-axis : 0%;
+    --x-axis : 0;
     display: grid;
     grid-template-columns: repeat(10, 200px);
     grid-gap: 5px;
