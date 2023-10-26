@@ -62,45 +62,32 @@ function ProductCarousel() {
     const trendDivision = () => {
         switch (document.defaultView.getComputedStyle(trendBody).getPropertyValue("width")) {
             case "500px":
-                console.log(document.defaultView.getComputedStyle(trendBody).getPropertyValue("width"))
                 return [5, 20];
                 
             case "200px":
-                console.log(document.defaultView.getComputedStyle(trendBody).getPropertyValue("width"))
                 return [10, 25];
         
             default:
-                console.log(document.defaultView.getComputedStyle(trendBody).getPropertyValue("width"))
                 return [2, 25];
         };
     }
     
-    const shiftR = () => {
+    const shift = (type) => {
         const [division, margin] = trendDivision();
         const width = Number.parseFloat(trendItemsStyles.getPropertyValue("width"))
         const shift = width/division;
 
-        if(xAxis <= (width - shift)){
-            xAxis += shift + margin
+        if(xAxis <= (width - shift) && type === "Right"){
+            xAxis += shift + margin;
     
-            trendItems.style.setProperty("--x-axis", `-${xAxis}px`)
+            trendItems.style.setProperty("--x-axis", `-${xAxis}px`);
+
+        }else  if(xAxis > 0 && type === "Left"){
+            xAxis -= shift + margin;
+    
+            trendItems.style.setProperty("--x-axis", `-${xAxis}px`);
         }
-        console.log(division)
-        console.log(trendItemsStyles.getPropertyValue("--x-axis"));
         
-    }
-
-    const shiftL = () => {
-        const [division, margin] = trendDivision();
-        const width = Number.parseFloat(trendItemsStyles.getPropertyValue("width"))
-        const shift = width/division;
-
-        if(xAxis > 0){
-            xAxis -= shift + margin
-    
-            trendItems.style.setProperty("--x-axis", `-${xAxis}px`)
-        }
-        console.log(trendItemsStyles.getPropertyValue("--x-axis"));
     }
 
 
@@ -113,7 +100,7 @@ function ProductCarousel() {
 
 
             <div className={styles.trendWrapper}>
-                <button className={styles.trendButtons} onClick={shiftL}><img src={Left} alt="" /></button>
+                <button className={styles.trendButtons} onClick={() => shift("Left")}><img src={Left} alt="" /></button>
 
                 <div id='trendBody' className={styles.trendBody}>
 
@@ -123,7 +110,7 @@ function ProductCarousel() {
 
                 </div>
 
-                <button className={styles.trendButtons} onClick={shiftR}><img src={Right} alt="" /></button>
+                <button className={styles.trendButtons} onClick={() => shift("Right")}><img src={Right} alt="" /></button>
             </div>
 
 

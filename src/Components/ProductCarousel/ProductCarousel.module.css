@@ -65,7 +65,7 @@
     grid-gap: 5px;
     width: 2000px;
     transform: translateX(var(--x-axis));
-    transition: all 2s;
+    transition: transform 2s;
 }
 
 
