@@ -59,38 +59,46 @@ function ProductCarousel() {
         }
     }
 
-    /*const trendDivision = () => {
-        switch (trendItemsStyles.getPropertyValue("width")) {
-            case value:
+    const trendDivision = () => {
+        switch (document.defaultView.getComputedStyle(trendBody).getPropertyValue("width")) {
+            case "500px":
+                console.log(document.defaultView.getComputedStyle(trendBody).getPropertyValue("width"))
+                return [5, 20];
                 
-                break;
+            case "200px":
+                console.log(document.defaultView.getComputedStyle(trendBody).getPropertyValue("width"))
+                return [10, 25];
         
             default:
-                break;
-        }
-    }*/
+                console.log(document.defaultView.getComputedStyle(trendBody).getPropertyValue("width"))
+                return [2, 25];
+        };
+    }
     
     const shiftR = () => {
+        const [division, margin] = trendDivision();
         const width = Number.parseFloat(trendItemsStyles.getPropertyValue("width"))
-        const shift = width/2;
+        const shift = width/division;
 
         if(xAxis <= (width - shift)){
-            xAxis += shift + 25
+            xAxis += shift + margin
     
             trendItems.style.setProperty("--x-axis", `-${xAxis}px`)
         }
+        console.log(division)
         console.log(trendItemsStyles.getPropertyValue("--x-axis"));
         
     }
 
     const shiftL = () => {
+        const [division, margin] = trendDivision();
         const width = Number.parseFloat(trendItemsStyles.getPropertyValue("width"))
-        const shift = width/2;
+        const shift = width/division;
 
         if(xAxis > 0){
-            xAxis -= shift + 25
+            xAxis -= shift + margin
     
-            trendItems.style.setProperty("--x-axis", `${xAxis}px`)
+            trendItems.style.setProperty("--x-axis", `-${xAxis}px`)
         }
         console.log(trendItemsStyles.getPropertyValue("--x-axis"));
     }
