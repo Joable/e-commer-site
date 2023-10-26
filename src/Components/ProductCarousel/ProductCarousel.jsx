@@ -6,7 +6,7 @@ import {
     useEffect,
     useState 
     } from 'react';
-
+    
 import { getTrendProducts } from '../../Services/getProducts'
 import ProductItem from '../ProductItem/ProductItem';
 import LoadingProductItem from '../ProductItem/LoadingProductItem';
@@ -15,7 +15,10 @@ function ProductCarousel() {
     const [trendItems, setTrendItems] = useState("");
     const [trendBody, setTrendBody] = useState("");
     const [trendProducts, setTrendProducts] = useState([]);
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
+    const [trendItemsStyles, setTrendItemsStyles] = useState("");
+    //const trendBodyStyles = document.defaultView.getComputedStyle(trendBody);
+    let xAxis = 0;
 
     useEffect(() => {
         const responseProduct = async () =>{
@@ -33,10 +36,14 @@ function ProductCarousel() {
 
         setTrendBody(document.getElementById('trendBody'));
         setTrendItems(document.getElementById('trendItems'));
-
+        
         responseProduct();
     }, []);
-
+    
+    useEffect(() => {
+        if(trendItems !== "") setTrendItemsStyles(document.defaultView.getComputedStyle(trendItems));
+    },[trendItems])
+    
 
     const displayItems = () => {
         const iterator = [...Array(10).keys()];
@@ -51,24 +58,40 @@ function ProductCarousel() {
             )
         }
     }
+
+    /*const trendDivision = () => {
+        switch (trendItemsStyles.getPropertyValue("width")) {
+            case value:
+                
+                break;
+        
+            default:
+                break;
+        }
+    }*/
     
     const shiftR = () => {
-        const trendItemsStyles = document.defaultView.getComputedStyle(trendItems);
-        const trendBodyStyles = document.defaultView.getComputedStyle(trendBody);
-        const width = (Number.parseFloat(trendItemsStyles.getPropertyValue("width")))/2
+        const width = Number.parseFloat(trendItemsStyles.getPropertyValue("width"))
+        const shift = width/2;
 
-        trendItems.style.setProperty("--x-axis", `-${width + 25}px`)
-
+        if(xAxis <= (width - shift)){
+            xAxis += shift + 25
+    
+            trendItems.style.setProperty("--x-axis", `-${xAxis}px`)
+        }
         console.log(trendItemsStyles.getPropertyValue("--x-axis"));
+        
     }
 
     const shiftL = () => {
-        const trendItemsStyles = document.defaultView.getComputedStyle(trendItems);
-        const trendBodyStyles = document.defaultView.getComputedStyle(trendBody);
-        const width = (Number.parseFloat(trendItemsStyles.getPropertyValue("width")))/2
+        const width = Number.parseFloat(trendItemsStyles.getPropertyValue("width"))
+        const shift = width/2;
 
-        trendItems.style.setProperty("--x-axis", `0px`)
-
+        if(xAxis > 0){
+            xAxis -= shift + 25
+    
+            trendItems.style.setProperty("--x-axis", `${xAxis}px`)
+        }
         console.log(trendItemsStyles.getPropertyValue("--x-axis"));
     }
 
