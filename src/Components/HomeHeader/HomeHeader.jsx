@@ -13,10 +13,10 @@ function HomeHeader() {
                 <h3>Furniture</h3>
             </Link>
 
-            <Link className={styles.clothes} to="/categories/clothes">
-                <img src={'../../img/clothes.jpg'} alt="Clothes" />
+            <Link className={styles.lamps} to="/categories/lamps">
+                <img src={'../../img/lamps.jpg'} alt="Lamps" />
                 <p></p>
-                <h3>Clothes</h3>
+                <h3>Lamps</h3>
             </Link>
 
             <Link className={styles.peripherals} to="/categories/peripherals">
