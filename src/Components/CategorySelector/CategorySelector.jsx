@@ -6,7 +6,7 @@ import { getProducts } from '../../Services/getProducts';
 
 export default function CategorySelector({category, setIsLoading, setProducts}){
     const [activeCategory, setActiveCategory] = useState(category);
-    const categories = ['all', 'furniture', 'kitchen', 'lamps', 'clothes', 'electronics', 'peripherals'];
+    const categories = ['all', 'furniture', 'kitchen', 'lamps', 'electronics', 'peripherals'];
 
     const changeCategory = async (category) => {
         
