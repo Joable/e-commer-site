@@ -13,10 +13,10 @@ function Home() {
         reverse: false
     };
     const lampsSeparator = {
-        title: "Huge variety of lamps",
-        text: "Search through our catalog of lamps and find the one that fits with you",
-        image:'../../img/lamps.jpg',
-        url:'/categories/lamps',
+        title: "Creative harmonious living",
+        text: "Our products are all made to standar sizes so that you can mix and match the freely.",
+        image:'../../img/livingRoom.PNG',
+        url:'/categories/furniture',
         reverse: true
     };
 
