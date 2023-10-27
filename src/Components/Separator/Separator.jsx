@@ -15,8 +15,8 @@ function Separator({parameters}) {
 
                     <p>{parameters.text}</p>
 
-                    <Link to={`${parameters.url}`} target='_blank'>
-                        <button className={styles.separatorButton}><b>SHOP NOW</b></button >
+                    <Link to={`${parameters.url}`}>
+                        <button className={styles.separatorButton} onClick={backToTop}><b>SHOP NOW</b></button >
                     </Link>
                 </div>
 
