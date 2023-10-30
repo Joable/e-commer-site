@@ -9,7 +9,7 @@
 .bodyReverse{
     display: flex;
     flex-direction: row-reverse;
-    width: 1000px;
+    width: 100%;
     height: 250px;
 }
 
