@@ -12,6 +12,7 @@
 
 /* modal */
 .modal{
+    overscroll-behavior: contain;
     display: none;
     position: fixed;
     z-index: 1;
