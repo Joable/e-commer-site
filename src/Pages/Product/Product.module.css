@@ -1,5 +1,8 @@
 /* productSection */
 .productSection{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     height: 100vh;
     max-height: 800px;
 }
