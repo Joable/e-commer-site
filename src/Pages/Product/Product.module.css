@@ -18,6 +18,7 @@
     display: flex;
     justify-content: space-between;
     height: 630px;
+    margin-bottom: 10px;
 }
 
 /* details */
@@ -34,7 +35,6 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     width: 100%;
-    margin: 50px 0;
 }
 
 /* productDetails */
@@ -53,6 +53,10 @@
 
 /* trend */
 .trend{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
     margin: 10px 0 70px 0;
 }
 

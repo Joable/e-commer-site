@@ -73,15 +73,12 @@ function Product() {
                         <ProductDescription product={product} id={id}/>
                     </div>
                 
-                </section>
-                
-                <section className={styles.details}>
-
                     <div className={styles.detailsWrapper}>
                         {product.details.map((detail) => <div className={styles.productDetails}><h3>{detail.name}</h3> <h4>{detail.description}</h4></div>)}
                     </div>
-                
+
                 </section>
+               
                 </>
             );
         };
@@ -92,9 +89,9 @@ function Product() {
 
             {displayProduct()}
 
-            <div className={styles.trend}>
+            <section className={styles.trend}>
                 <ProductCarousel/>
-            </div>
+            </section>
 
         </div> 
     );
