@@ -82,10 +82,7 @@
         max-width: 520px;
     }
 
-    .separatorImage img{
-        width: auto;
-        max-width: none;
-    }
+    
 
     /* textContainer */
     .textContainer{
@@ -112,14 +109,14 @@
     }
 
     .separatorImage img{
-        min-width: 500px;
-        max-width: 500px;
+        width: auto;
+        max-width: none;
     }
     /* textContainer */
     .textContainer{
         justify-content: center;
-        width: 200px;
         margin-top: 0;
+        width: 100%;
     }
 
     /* textBody */
@@ -127,7 +124,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 200px;
     }
     .textBody p{
         text-align: justify;
