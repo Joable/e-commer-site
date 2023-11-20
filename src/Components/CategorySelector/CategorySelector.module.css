@@ -45,7 +45,4 @@
         height: auto;
     }
 
-    .categoriesButtons button:first-child {
-        grid-column: 1/3;
-    }
 }
