@@ -4,9 +4,15 @@ import { Link } from 'react-router-dom';
 
 function Separator({parameters}) {
 
+    const displayReverse = () => {
+        if(parameters.reverse)  return styles.bodyReverse;
+
+        return "";
+    }
+
     return ( 
         <>
-        <div className={(parameters.reverse) ?  styles.bodyReverse : styles.separatorBody}>
+        <div className={`${styles.separatorBody} ${displayReverse()}`}>
             
             <div className={styles.textContainer}>
 
