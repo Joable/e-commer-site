@@ -44,7 +44,7 @@ function ProductItem({id, productData}) {
     };
 
     return (  
-        <Link className={styles.item} to={`/product/${id}`} replace>
+        <Link className={styles.item} to={`/ecommerceBuild/product/${id}`} replace>
             <div className={styles.itemImage}>
                 {loadingImage()}
             </div>

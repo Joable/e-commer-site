@@ -17,7 +17,7 @@ function Footer() {
             </div>
 
             <div className={styles.footerLogo}>
-                <Link className={styles.logo} to="/">
+                <Link className={styles.logo} to="/ecommerceBuild/">
                     <img src={Logo} alt="E-Commerce Site Logo" />
                 </Link>
             </div>

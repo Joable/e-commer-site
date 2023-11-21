@@ -48,11 +48,11 @@ function App() {
 
       <div className="center">
         <Routes>
-            <Route path='/' element={<Home/>}/>
+            <Route path='ecommerceBuild/' element={<Home/>}/>
 
-            <Route path='/product/:id' element={<Product/>}/>
+            <Route path='ecommerceBuild/product/:id' element={<Product/>}/>
 
-            <Route path='/categories/:category' element={<Categories/>}/>
+            <Route path='ecommerceBuild/categories/:category' element={<Categories/>}/>
         </Routes>
       </div>
       </CartContext.Provider>

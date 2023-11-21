@@ -24,14 +24,14 @@ function Nav() {
         <>
         <nav id='navbar'>
             <div className={styles.navContainer}>
-                <Link className={styles.navLogo} to='/'>
+                <Link className={styles.navLogo} to='ecommerceBuild/'>
                     <img src={Logo} alt="E-Commerce Site Logo" />
                 </Link>
 
                 <div className={styles.navButtons}>
-                    <Link to='/categories/all'>Categories</Link>
+                    <Link to='ecommerceBuild/categories/all'>Categories</Link>
 
-                    <Link to='/product/1s9b7PcLGhK4yiwsFvG5'>Product Page</Link>
+                    <Link to='ecommerceBuild/product/1s9b7PcLGhK4yiwsFvG5'>Product Page</Link>
 
                     <Cart/>
                 </div>

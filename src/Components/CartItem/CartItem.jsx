@@ -8,6 +8,8 @@ import {
     useState
 } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import CartQuantity from '../CartQuantity/CartQuantity';
 import CartDelete from '../CartDelete/CartDelete';
 import Spinner from '../Spinner/Spinner';
@@ -51,9 +53,7 @@ export default function CartItem({id, product, image}){
             <div className={styles.itemDetails}>
 
                 <div className={styles.detailsHeader}>
-                    <a href={`/product/${id}`}>
-                        <h3>{product.name}</h3>
-                    </a>
+                    <h3>{product.name}</h3>
                             
                     <h3><b>{product.price}</b>$</h3>
                 </div>

@@ -9,14 +9,14 @@ function Home() {
         title: "Kitchen utensils",
         text: "Get the best utensils for your kitchen",
         image:'img/kitchen.jpg',
-        url:'/categories/kitchen',
+        url:'categories/kitchen',
         reverse: false
     };
     const lampsSeparator = {
         title: "Creative harmonious living",
-        text: "Our products are all made to standar sizes so that you can mix and match the freely.",
+        text: "Our products are all made to standard sizes so that you can mix and match the freely.",
         image:'img/livingRoom.PNG',
-        url:'/categories/furniture',
+        url:'categories/furniture',
         reverse: true
     };
 
