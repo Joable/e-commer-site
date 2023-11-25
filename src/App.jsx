@@ -20,6 +20,7 @@ import Home from './Pages/Home/Home';
 import Product from './Pages/Product/Product';
 import Categories from './Pages/Categories/Categories';
 import SignIn from './Pages/SignIn/SignIn';
+import LogIn from './Pages/LogIn/LogIn';
 
 function App() {
   const [cartProducts, setCartProducts] = useState([]);
@@ -56,6 +57,8 @@ function App() {
             <Route path='ecommerceBuild/categories/:category' element={<Categories/>}/>
 
             <Route path='ecommerceBuild/signin' element={<SignIn/>}/>
+
+            <Route path='ecommerceBuild/login' element={<LogIn/>}/>
         </Routes>
       </div>
       </CartContext.Provider>
