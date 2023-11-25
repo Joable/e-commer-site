@@ -1,6 +1,6 @@
 import styles from './CartItem.module.css';
 
-import firebase from '../../Config/Firebase';
+import firebase from '../../Config/firebase';
 import "firebase/compat/storage";
 
 import {

@@ -1,4 +1,4 @@
-import firebase from "../Config/Firebase";
+import firebase from "../Config/firebase";
 
 const productsCollection = firebase.db.collection('products');
 

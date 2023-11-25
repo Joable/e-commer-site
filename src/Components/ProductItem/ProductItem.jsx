@@ -1,6 +1,6 @@
 import styles from './ProductItem.module.css';
 
-import firebase from '../../Config/Firebase';
+import firebase from '../../Config/firebase';
 import "firebase/compat/storage";
 
 import { Link } from 'react-router-dom';

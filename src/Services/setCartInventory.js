@@ -1,4 +1,4 @@
-import firebase from "../Config/Firebase";
+import firebase from "../Config/firebase";
 
 export function setProductQuantity(id, quantity){
     firebase.db.collection('cart').doc(id).update({"quantity": quantity});

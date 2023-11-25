@@ -1,4 +1,4 @@
-import firebase from "../Config/Firebase";
+import firebase from "../Config/firebase";
 import { arrangeInventoryById } from "../Utils/arrangeInventoryById";
 
 export function getCartInventory(){

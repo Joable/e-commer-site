@@ -1,3 +1,4 @@
+import { createUser } from '../../Services/createUser';
 import styles from './SignIn.module.css';
 
 import { useState } from 'react';
@@ -24,8 +25,13 @@ function SignIn(){
 
     const handleSubmit = (event) =>{
         event.preventDefault();
+        const userCreation = async () =>{
+            const response = await createUser(form.email, form.password);
+            
+            console.log(response);
+        };
 
-        console.log(form);
+        userCreation();
     };
 
     return(
