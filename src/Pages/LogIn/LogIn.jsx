@@ -1,3 +1,4 @@
+import { logUser } from '../../Services/logUser';
 import styles from './LogIn.module.css';
 
 import { useState } from 'react';
@@ -22,7 +23,17 @@ function LogIn(){
     const handleSubmit = (event) =>{
         event.preventDefault();
         
-        console.log(form)
+        const loggingInUser = async () => {
+            try{
+                const response = await logUser(form.email, form.password);
+
+                console.log(response);
+            }catch(e){
+                console.log(e);
+            };
+        }
+
+        loggingInUser();
     };
 
     return(
