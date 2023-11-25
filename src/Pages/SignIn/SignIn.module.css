@@ -1,5 +1,24 @@
+/* form */
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 /* signin */
 .signin{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.signin label{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
 }

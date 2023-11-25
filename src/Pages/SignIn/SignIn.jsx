@@ -35,7 +35,7 @@ function SignIn(){
     };
 
     return(
-        <>
+        <div className={styles.form}>
             <form onSubmit={handleSubmit} autoComplete='off' className={styles.signin}>
                 <label>
                     Username:
@@ -71,7 +71,7 @@ function SignIn(){
                     Create Account
                 </button>
             </form>
-        </>
+        </div>
     );
 };
 
