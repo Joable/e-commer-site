@@ -1,7 +1,8 @@
-import { createUser } from '../../Services/createUser';
 import styles from './SignIn.module.css';
 
 import { useState } from 'react';
+
+import { createUser } from '../../Services/createUser';
 
 function SignIn(){
     const [form, setForm] = useState({
@@ -26,9 +27,14 @@ function SignIn(){
     const handleSubmit = (event) =>{
         event.preventDefault();
         const userCreation = async () =>{
-            const response = await createUser(form.email, form.password);
+            try{
+                const response = await createUser(form.email, form.password);
+
+                console.log(response);
+            }catch(e){
+                console.log(e);
+            };
             
-            console.log(response);
         };
 
         userCreation();
@@ -36,6 +42,8 @@ function SignIn(){
 
     return(
         <div className={styles.form}>
+            <h2>Sign In</h2>
+
             <form onSubmit={handleSubmit} autoComplete='off' className={styles.signin}>
                 <label>
                     Username:

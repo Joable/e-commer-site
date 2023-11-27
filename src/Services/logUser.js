@@ -8,7 +8,8 @@ export async function logUser(email, password){
 
         user = response;
     }catch(e){
-        console.log(e);
+
+        return e;
     };
 
     return user;
