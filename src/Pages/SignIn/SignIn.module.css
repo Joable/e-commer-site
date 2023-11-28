@@ -23,3 +23,17 @@
     width: 100%;
     margin-bottom: 10px;
 }
+
+.signin:last-child{
+    align-items: self-start;
+}
+
+/* createAccountButton */
+.createAccountButton{
+    width: 120px;
+    height: 40px;
+    color: white;
+    background-color: black;
+    border-radius: 0;
+    border: 0;
+}

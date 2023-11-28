@@ -29,7 +29,6 @@
 }
 
 .login:last-child{
-    justify-content: flex-start;
     align-items: self-start;
 }
 

@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { createUser } from '../../Services/createUser';
 import { errorHandling } from '../../Utils/errorHandling';
+
 import DisplayError from '../../Components/DisplayError/DisplayError';
 
 function SignIn(){
@@ -100,7 +101,7 @@ function SignIn(){
                     {errorMessage}
                 </DisplayError>
 
-                <button type='submit'>
+                <button type='submit' className={styles.createAccountButton}>
                     Create Account
                 </button>
             </form>
