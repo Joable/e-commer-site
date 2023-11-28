@@ -27,18 +27,38 @@ function SignIn(){
         });
     };
 
+    const confirm = () => {
+        let response = "";
+
+        if(form.email !== form.confirmEmail){
+            response = {code: "auth/cannot-confirm-email"};
+
+        } else if(form.password !== form.confirmPassword){
+            response = {code: "auth/cannot-confirm-password"};
+        };
+
+        return response;
+    };
+
     const handleSubmit = (event) =>{
+        let response;
         event.preventDefault();
+
         const userCreation = async () =>{
 
-            const response = await createUser(form.email, form.password);
+            response = confirm();
+
+            if(!response){
+                response = await createUser(form.email, form.password);
+            }
             
             if(response.code){
                 setErrorMessage(errorHandling(response.code));
             }
         };
-
+        
         userCreation();
+
     };
 
     return(

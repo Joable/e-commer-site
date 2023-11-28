@@ -18,6 +18,12 @@ export function errorHandling(code){
 
         case "auth/weak-password":
            return "The password must be longer than 6 characters.";
+
+        case "auth/cannot-confirm-email":
+            return "The emails must match."   
+
+        case "auth/cannot-confirm-password":
+            return "The passwords must match."
         default:
             return code;
     }
