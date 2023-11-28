@@ -3,6 +3,8 @@ import styles from './SignIn.module.css';
 import { useState } from 'react';
 
 import { createUser } from '../../Services/createUser';
+import { errorHandling } from '../../Utils/errorHandling';
+import DisplayError from '../../Components/DisplayError/DisplayError';
 
 function SignIn(){
     const [form, setForm] = useState({
@@ -12,6 +14,7 @@ function SignIn(){
         confirmEmail:"",
         confirmPassword:""
     });
+    const [errorMessage, setErrorMessage] = useState(""); 
 
     const handleChange = (event) => {
         const target = event.target;
@@ -27,14 +30,12 @@ function SignIn(){
     const handleSubmit = (event) =>{
         event.preventDefault();
         const userCreation = async () =>{
-            try{
-                const response = await createUser(form.email, form.password);
 
-                console.log(response);
-            }catch(e){
-                console.log(e);
-            };
+            const response = await createUser(form.email, form.password);
             
+            if(response.code){
+                setErrorMessage(errorHandling(response.code));
+            }
         };
 
         userCreation();
@@ -74,6 +75,10 @@ function SignIn(){
                     
                     <input name='confirmPassword' value={form.confirmPassword} type="password" onChange={handleChange} />
                 </label>
+
+                <DisplayError>
+                    {errorMessage}
+                </DisplayError>
 
                 <button type='submit'>
                     Create Account
