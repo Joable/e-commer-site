@@ -27,3 +27,19 @@
     width: 100%;
     margin-bottom: 10px;
 }
+
+.login:last-child{
+    justify-content: flex-start;
+    align-items: self-start;
+}
+
+/* logInButton */
+.logInButton{
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: black;
+    border-radius: 0;
+    border: 0;
+    float: inline-start;
+}

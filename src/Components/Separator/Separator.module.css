@@ -56,10 +56,6 @@
     border: 0;
 }
 
-.textBody button:hover{
-    cursor: pointer;
-}
-
 @media (max-width:1000px){
     /* body */
     .separatorBody{

@@ -16,7 +16,6 @@
 }
 
 .numberButton:hover{
-    cursor: pointer;
     background-color: var(--white-hover);
 }
 

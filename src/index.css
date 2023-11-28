@@ -21,6 +21,10 @@ section{
   max-height: 1080px;
 }
 
+button:hover{
+  cursor: pointer;
+}
+
 h1,h2,h3,h4,a,button,p,label{
   font-family: 'Albert Sans', sans-serif;
 }

@@ -2,7 +2,7 @@ import styles from './LogIn.module.css';
 
 import { useState } from 'react';
 
-import { errorHandling } from './errorHandling';
+import { errorHandling } from '../../Utils/errorHandling';
 import { logUser } from '../../Services/logUser';
 
 import DisplayError from '../../Components/DisplayError/DisplayError';
@@ -63,8 +63,10 @@ function LogIn(){
                     {errorMessage}
                 </DisplayError>
 
-                <button type='submit'>
-                    Log In
+                <button type='submit' className={styles.logInButton}>
+                    <b>
+                        LOG IN
+                    </b>
                 </button>
             </form>
         </div>

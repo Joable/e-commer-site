@@ -13,13 +13,11 @@
 }
 
 .categoriesButtons button:hover{
-    cursor: pointer;
     background-color: var(--white-hover);
 }
 
 
 .categoriesButtons button:active{
-    cursor: pointer;
     background-color: var(--white-active)
 }
 

@@ -1,0 +1,17 @@
+.errorBox{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: rgb(255, 138, 138);
+    color: red;
+}
+
+.errorBox h4{
+    margin: 0;
+}
